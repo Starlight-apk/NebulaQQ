@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1800" height="1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="arch-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0a2e"/>
+      <stop offset="100%" style="stop-color:#0f3460"/>
+    </linearGradient>
+    <linearGradient id="arch-box" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e94560"/>
+      <stop offset="100%" style="stop-color:#a2d2ff"/>
+    </linearGradient>
+    <filter id="arch-shadow">
+      <feDropShadow dx="4" dy="4" stdDeviation="8" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  
+  <rect width="1800" height="1200" fill="url(#arch-bg)"/>
+  
+  <text x="900" y="60" font-family="Arial" font-size="36" font-weight="bold" fill="url(#arch-box)" text-anchor="middle">🏗️ NebulaQQ 架构设计</text>
+  
+  <!-- WebUI Layer -->
+  <g filter="url(#arch-shadow)">
+    <rect x="200" y="100" width="1400" height="200" rx="20" fill="#16213e" stroke="url(#arch-box)" stroke-width="2"/>
+  </g>
+  <text x="900" y="145" font-family="Arial" font-size="24" fill="#ffffff" text-anchor="middle" font-weight="bold">WebUI Layer</text>
+  
+  <rect x="280" y="165" width="200" height="100" rx="12" fill="#0f3460"/>
+  <text x="380" y="210" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Dashboard</text>
+  <text x="380" y="235" font-family="Arial" font-size="12" fill="#a2d2ff" text-anchor="middle">数据可视化</text>
+  
+  <rect x="540" y="165" width="200" height="100" rx="12" fill="#0f3460"/>
+  <text x="640" y="210" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Plugins</text>
+  <text x="640" y="235" font-family="Arial" font-size="12" fill="#a2d2ff" text-anchor="middle">插件管理</text>
+  
+  <rect x="800" y="165" width="200" height="100" rx="12" fill="#0f3460"/>
+  <text x="900" y="210" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Modules</text>
+  <text x="900" y="235" font-family="Arial" font-size="12" fill="#a2d2ff" text-anchor="middle">模块管理</text>
+  
+  <rect x="1060" y="165" width="200" height="100" rx="12" fill="#0f3460"/>
+  <text x="1160" y="210" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Settings</text>
+  <text x="1160" y="235" font-family="Arial" font-size="12" fill="#a2d2ff" text-anchor="middle">系统配置</text>
+  
+  <!-- Core Layer -->
+  <g filter="url(#arch-shadow)">
+    <rect x="200" y="360" width="1400" height="320" rx="20" fill="#16213e" stroke="url(#arch-box)" stroke-width="2"/>
+  </g>
+  <text x="900" y="405" font-family="Arial" font-size="24" fill="#ffffff" text-anchor="middle" font-weight="bold">Core Layer</text>
+  
+  <rect x="280" y="430" width="240" height="110" rx="12" fill="#0f3460"/>
+  <text x="400" y="475" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">Plugin System</text>
+  <text x="400" y="505" font-family="Arial" font-size="12" fill="#a2d2ff" text-anchor="middle">依赖管理 · 热重载</text>
+  
+  <rect x="560" y="430" width="240" height="110" rx="12" fill="#0f3460"/>
+  <text x="680" y="475" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">Module System</text>
+  <text x="680" y="505" font-family="Arial" font-size="12" fill="#a2d2ff" text-anchor="middle">按需加载 · 热插拔</text>
+  
+  <rect x="840" y="430" width="240" height="110" rx="12" fill="#0f3460"/>
+  <text x="960" y="475" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">Theme System</text>
+  <text x="960" y="505" font-family="Arial" font-size="12" fill="#a2d2ff" text-anchor="middle">自定义主题</text>
+  
+  <rect x="1120" y="430" width="240" height="110" rx="12" fill="#0f3460"/>
+  <text x="1240" y="475" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">Event System</text>
+  <text x="1240" y="505" font-family="Arial" font-size="12" fill="#a2d2ff" text-anchor="middle">EventEmitter</text>
+  
+  <!-- Event Box -->
+  <rect x="500" y="580" width="640" height="70" rx="12" fill="#e94560" opacity="0.8"/>
+  <text x="820" y="625" font-family="Arial" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold">Event System (EventEmitter)</text>
+  
+  <!-- Infrastructure Layer -->
+  <g filter="url(#arch-shadow)">
+    <rect x="200" y="740" width="1400" height="280" rx="20" fill="#16213e" stroke="url(#arch-box)" stroke-width="2"/>
+  </g>
+  <text x="900" y="785" font-family="Arial" font-size="24" fill="#ffffff" text-anchor="middle" font-weight="bold">Infrastructure Layer</text>
+  
+  <rect x="280" y="810" width="240" height="160" rx="12" fill="#0f3460"/>
+  <text x="400" y="860" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">OneBot Adapter</text>
+  <text x="400" y="895" font-family="Arial" font-size="12" fill="#a2d2ff" text-anchor="middle">协议适配</text>
+  <text x="400" y="920" font-family="Arial" font-size="12" fill="#a2d2ff" text-anchor="middle">v11 标准</text>
+  
+  <rect x="560" y="810" width="240" height="160" rx="12" fill="#0f3460"/>
+  <text x="680" y="860" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">Network Module</text>
+  <text x="680" y="895" font-family="Arial" font-size="12" fill="#a2d2ff" text-anchor="middle">HTTP / WebSocket</text>
+  
+  <rect x="840" y="810" width="240" height="160" rx="12" fill="#0f3460"/>
+  <text x="960" y="860" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">Utils Library</text>
+  <text x="960" y="895" font-family="Arial" font-size="12" fill="#a2d2ff" text-anchor="middle">CQCode · 缓存</text>
+  <text x="960" y="920" font-family="Arial" font-size="12" fill="#a2d2ff" text-anchor="middle">限流器</text>
+  
+  <rect x="1120" y="810" width="240" height="160" rx="12" fill="#0f3460"/>
+  <text x="1240" y="860" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">WebUI Server</text>
+  <text x="1240" y="895" font-family="Arial" font-size="12" fill="#a2d2ff" text-anchor="middle">Express + WS</text>
+  
+  <!-- Arrows -->
+  <g stroke="#a2d2ff" stroke-width="3" fill="none">
+    <line x1="900" y1="300" x2="900" y2="355"/>
+    <polygon points="900,355 890,335 910,335" fill="#a2d2ff"/>
+    
+    <line x1="900" y1="680" x2="900" y2="735"/>
+    <polygon points="900,735 890,715 910,715" fill="#a2d2ff"/>
+  </g>
+  
+  <!-- Bottom label -->
+  <text x="900" y="1150" font-family="Arial" font-size="18" fill="#6c7a89" text-anchor="middle">NebulaQQ Framework - 分层架构设计</text>
+</svg>

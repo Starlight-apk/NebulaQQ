@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://image.pollinations.ai/prompt/Epic%20futuristic%20QQ%20robot%20framework%20banner%2C%20nebula%20galaxy%20background%2C%20purple%20and%20blue%20gradient%2C%20cyberpunk%20city%20skyline%2C%20material%20design%203%2C%20Arknights%20game%20aesthetic%2C%20glowing%20crystal%20elements%2C%20particle%20effects%2C%20bokeh%2C%20cinematic%20lighting%2C%20ultra%20detailed%2C%20digital%20art%2C%201920x600?width=1920&height=600&seed=12345&nologo=true" alt="NebulaQQ Banner" width="100%" />
+<img src="./assets/images/banner.svg" alt="NebulaQQ Banner" width="100%" />
 
 # 🌌 NebulaQQ
 
@@ -120,7 +120,7 @@ npm run start:webui
 
 <div align="center">
 
-<img src="https://image.pollinations.ai/prompt/Beautiful%20web%20dashboard%20UI%20design%20mockup%2C%20Material%20Design%203%2C%20dark%20theme%20with%20purple%20blue%20accents%2C%20Arknights%20game%20UI%20style%2C%20data%20visualization%20charts%2C%20real-time%20logs%2C%20plugin%20management%20panel%2C%20modern%20clean%20interface%2C%20glassmorphism%2C%20high%20quality%2C%201920x1080?width=1920&height=1080&seed=34567&nologo=true" alt="WebUI Dashboard" width="100%" />
+<img src="./assets/images/banner.svg" alt="WebUI Dashboard" width="100%" />
 
 **NebulaQQ WebUI - Material Design 3 × Arknights Aesthetic**
 
@@ -336,7 +336,7 @@ NebulaQQ is built upon these excellent projects:
 
 <div align="center">
 
-<img src="https://image.pollinations.ai/prompt/Social%20media%20share%20card%2C%20NebulaQQ%20framework%20announcement%2C%20modern%20gradient%20background%2C%20purple%20blue%2C%20key%20features%20highlights%2C%20professional%20design%2C%201200x630?width=1200&height=630&seed=11223&nologo=true" alt="Footer" width="100%" />
+<img src="./assets/images/banner.svg" alt="Footer" width="100%" />
 
 ### 🌌 NebulaQQ Framework
 

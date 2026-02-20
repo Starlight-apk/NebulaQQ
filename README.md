@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://image.pollinations.ai/prompt/Epic%20futuristic%20QQ%20robot%20framework%20banner%2C%20nebula%20galaxy%20background%2C%20purple%20and%20blue%20gradient%2C%20cyberpunk%20city%20skyline%2C%20material%20design%203%2C%20Arknights%20game%20aesthetic%2C%20glowing%20crystal%20elements%2C%20particle%20effects%2C%20bokeh%2C%20cinematic%20lighting%2C%20ultra%20detailed%2C%20digital%20art%2C%201920x600?width=1920&height=600&seed=12345&nologo=true" alt="NebulaQQ Banner" width="100%" />
+<img src="./assets/images/banner.svg" alt="NebulaQQ Banner" width="100%" />
 
 # 🌌 NebulaQQ
 
@@ -35,7 +35,7 @@
 
 <div align="center">
 
-<img src="https://image.pollinations.ai/prompt/Modern%20software%20framework%20features%20showcase%2C%208%20isometric%20icons%20floating%20in%20space%2C%20plugin%20system%2C%20module%20system%2C%20theme%20system%2C%20web%20UI%2C%20TypeScript%2C%20OneBot%20protocol%2C%20performance%20optimization%2C%20Termux%20support%2C%20purple%20blue%20gradient%2C%20clean%20minimal%203d%20render%2C%201600x800?width=1600&height=800&seed=23456&nologo=true" alt="Features Showcase" width="100%" />
+<img src="./assets/images/features.svg" alt="Features Showcase" width="100%" />
 
 </div>
 
@@ -88,12 +88,6 @@
 
 ### 方式一：一键安装 (推荐)
 
-<div align="center">
-
-<img src="https://image.pollinations.ai/prompt/Beautiful%20code%20editor%20screenshot%2C%20Terminal%20command%20line%20interface%2C%20install%20script%20running%2C%20purple%20blue%20gradient%20theme%2C%20modern%20IDE%20style%2C%20syntax%20highlighting%2C%20clean%20code%2C%20professional%20programming%2C%201600x400?width=1600&height=400&seed=56789&nologo=true" alt="Installation" width="100%" />
-
-</div>
-
 ```bash
 # 克隆项目
 git clone https://github.com/Starlight-apk/NebulaQQ.git
@@ -138,7 +132,7 @@ npm run dev
 
 <div align="center">
 
-<img src="https://image.pollinations.ai/prompt/Professional%20software%20architecture%20diagram%2C%20layered%20structure%2C%20core%20event%20system%2C%20plugin%20module%20theme%20systems%2C%20OneBot%20adapter%2C%20network%20module%2C%20utils%20library%2C%20WebUI%20layer%2C%20isometric%20view%2C%20purple%20blue%20gradient%2C%20clean%20vector%20illustration%2C%20tech%20style%2C%201800x1200?width=1800&height=1200&seed=45678&nologo=true" alt="Architecture Diagram" width="100%" />
+<img src="./assets/images/architecture.svg" alt="Architecture Diagram" width="100%" />
 
 </div>
 
@@ -160,7 +154,7 @@ npm run dev
 
 <div align="center">
 
-<img src="https://image.pollinations.ai/prompt/Beautiful%20web%20dashboard%20UI%20design%20mockup%2C%20Material%20Design%203%2C%20dark%20theme%20with%20purple%20blue%20accents%2C%20Arknights%20game%20UI%20style%2C%20data%20visualization%20charts%2C%20real-time%20logs%2C%20plugin%20management%20panel%2C%20modern%20clean%20interface%2C%20glassmorphism%2C%20high%20quality%2C%201920x1080?width=1920&height=1080&seed=34567&nologo=true" alt="WebUI Dashboard" width="100%" />
+<img src="./assets/images/webui-dashboard.svg" alt="WebUI Dashboard" width="100%" />
 
 **NebulaQQ WebUI - Material Design 3 × 明日方舟美学**
 
@@ -170,21 +164,19 @@ npm run dev
 
 <div align="center">
 
-| ![Dashboard](https://image.pollinations.ai/prompt/Modern%20web%20dashboard%20UI%20design%2C%20Material%20Design%203%2C%20dark%20theme%2C%20purple%20blue%20accent%20colors%2C%20Arknights%20game%20aesthetic%2C%20clean%20interface%2C%20data%20visualization%2C%20analytics%20dashboard%2C%20high%20quality%20mockup%2C%20800x500?width=800&height=500&seed=42&nologo=true) | ![Plugins](https://image.pollinations.ai/prompt/Plugin%20management%20UI%20panel%2C%20Material%20Design%203%2C%20dark%20theme%2C%20purple%20blue%20accents%2C%20card%20layout%2C%20modern%20clean%20design%2C%20800x500?width=800&height=500&seed=43&nologo=true) |
-|:---:|:---:|
 | **概览 Dashboard** | **插件管理 Plugins** |
-
-| ![Modules](https://image.pollinations.ai/prompt/Module%20management%20UI%20panel%2C%20Material%20Design%203%2C%20dark%20theme%2C%20purple%20blue%20accents%2C%20list%20layout%2C%20modern%20clean%20design%2C%20800x500?width=800&height=500&seed=44&nologo=true) | ![Themes](https://image.pollinations.ai/prompt/Three%20mobile%20app%20screens%20showing%20different%20themes%2C%20dark%20theme%2C%20light%20theme%2C%20special%20effects%20theme%2C%20Material%20Design%203%2C%20purple%20blue%20gradient%2C%20Arknights%20aesthetic%2C%20UI%20design%20mockup%2C%20600x400?width=600&height=400&seed=67890&nologo=true) |
 |:---:|:---:|
+| 数据可视化 | 插件列表管理 |
+
 | **模块管理 Modules** | **主题设置 Themes** |
+|:---:|:---:|
+| 模块热插拔 | 多主题切换 |
 
 </div>
 
 ### 内置主题
 
 <div align="center">
-
-<img src="https://image.pollinations.ai/prompt/Three%20mobile%20app%20screens%20showing%20different%20themes%2C%20dark%20theme%2C%20light%20theme%2C%20special%20effects%20theme%2C%20Material%20Design%203%2C%20purple%20blue%20gradient%2C%20Arknights%20aesthetic%2C%20UI%20design%20mockup%2C%201200x800?width=1200&height=800&seed=67890&nologo=true" alt="Themes Showcase" width="100%" />
 
 | 🌑 **明日方舟·暗** | ☀️ **罗德岛·光** | 💎 **源石技艺** |
 |:---:|:---:|:---:|
@@ -210,12 +202,6 @@ npm run start:webui
 ---
 
 ## 🏗️ 架构设计
-
-<div align="center">
-
-<img src="https://image.pollinations.ai/prompt/Professional%20software%20architecture%20diagram%2C%20layered%20structure%2C%20core%20event%20system%2C%20plugin%20module%20theme%20systems%2C%20OneBot%20adapter%2C%20network%20module%2C%20utils%20library%2C%20WebUI%20layer%2C%20isometric%20view%2C%20purple%20blue%20gradient%2C%20clean%20vector%20illustration%2C%20tech%20style%2C%201800x1200?width=1800&height=1200&seed=45678&nologo=true" alt="Architecture" width="100%" />
-
-</div>
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -254,12 +240,6 @@ npm run start:webui
 ---
 
 ## 💡 示例代码
-
-<div align="center">
-
-<img src="https://image.pollinations.ai/prompt/Beautiful%20code%20editor%20screenshot%2C%20TypeScript%20code%20for%20QQ%20bot%2C%20syntax%20highlighting%2C%20dark%20theme%2C%20purple%20blue%20color%20scheme%2C%20modern%20IDE%20interface%2C%20clean%20code%2C%20professional%20programming%2C%201600x900?width=1600&height=900&seed=56789&nologo=true" alt="Code Example" width="100%" />
-
-</div>
 
 ### 基础机器人
 
@@ -318,8 +298,6 @@ await ctx.reply([CQ.at(userId), CQ.face(123), ' 你好！']);
 ## 📱 平台支持
 
 <div align="center">
-
-<img src="https://image.pollinations.ai/prompt/Platform%20compatibility%20showcase%2C%20Linux%20macOS%20Windows%20Android%20devices%2C%20x64%20ARM64%20processors%2C%20isometric%20illustration%2C%20purple%20blue%20gradient%2C%20tech%20style%2C%20clean%20design%2C%201600x600?width=1600&height=600&seed=99887&nologo=true" alt="Platform Support" width="100%" />
 
 | <g-emoji class="g-emoji" alias="🐧">🐧</g-emoji> **Linux** | <g-emoji class="g-emoji" alias="🍎">🍎</g-emoji> **macOS** | <g-emoji class="g-emoji" alias="🪟">🪟</g-emoji> **Windows** | <g-emoji class="g-emoji" alias="📱">📱</g-emoji> **Termux** |
 |:---:|:---:|:---:|:---:|
@@ -400,12 +378,6 @@ UI 文档
 
 ## 🤝 参与贡献
 
-<div align="center">
-
-<img src="https://image.pollinations.ai/prompt/Open%20source%20community%20illustration%2C%20developers%20collaborating%2C%20GitHub%20style%2C%20purple%20blue%20gradient%2C%20modern%20flat%20design%2C%20diverse%20team%2C%20coding%20together%2C%201600x600?width=1600&height=600&seed=88776&nologo=true" alt="Community" width="100%" />
-
-</div>
-
 我们欢迎各种形式的贡献！
 
 1. ⭐ **Fork** 本仓库
@@ -426,10 +398,6 @@ UI 文档
 
 ## 📊 项目统计
 
-<div align="center">
-
-<img src="https://image.pollinations.ai/prompt/Performance%20comparison%20charts%20and%20graphs%2C%20bar%20charts%2C%20line%20graphs%2C%20speed%20metrics%2C%20memory%20usage%2C%20connection%20pool%20optimization%2C%20cache%20system%2C%20modern%20data%20visualization%2C%20purple%20blue%20colors%2C%20clean%20design%2C%201400x800?width=1400&height=800&seed=78901&nologo=true" alt="Statistics" width="100%" />
-
 | 指标 | 数值 |
 |------|------|
 | 📦 核心模块 | 9 个 |
@@ -439,15 +407,9 @@ UI 文档
 | 📝 文档页面 | 10+ |
 | 🌟 GitHub Stars | [![Stars](https://img.shields.io/github/stars/Starlight-apk/NebulaQQ?style=flat)](https://github.com/Starlight-apk/NebulaQQ) |
 
-</div>
-
 ---
 
 ## 🙏 致谢
-
-<div align="center">
-
-<img src="https://image.pollinations.ai/prompt/NebulaQQ%20ecosystem%20diagram%2C%20central%20core%20with%20orbiting%20satellites%2C%20plugins%20modules%20themes%20WebUI%20community%20documentation%2C%20galaxy%20theme%2C%20purple%20blue%20gradient%2C%20isometric%20design%2C%201600x1000?width=1600&height=1000&seed=89012&nologo=true" alt="Ecosystem" width="100%" />
 
 NebulaQQ 基于以下优秀项目构建：
 
@@ -455,16 +417,11 @@ NebulaQQ 基于以下优秀项目构建：
 - [NapCatReforged](https://github.com/NapNeko/NapCatReforged) - 模块化设计
 - [OneBot](https://onebot.dev/) - 协议标准
 - [Material Design](https://m3.material.io/) - 设计规范
-- [明日方舟](https://ak.hypergryph.com.com/) - 美学灵感
-- [Pollinations.AI](https://pollinations.ai/) - 图片生成
-
-</div>
+- [明日方舟](https://ak.hypergryph.com/) - 美学灵感
 
 ---
 
 <div align="center">
-
-<img src="https://image.pollinations.ai/prompt/Social%20media%20share%20card%2C%20NebulaQQ%20framework%20announcement%2C%20modern%20gradient%20background%2C%20purple%20blue%2C%20key%20features%20highlights%2C%20professional%20design%2C%201200x630?width=1200&height=630&seed=11223&nologo=true" alt="Footer" width="100%" />
 
 ### 🌌 NebulaQQ Framework
 

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920" height="640" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0a2e"/>
+      <stop offset="50%" style="stop-color:#16213e"/>
+      <stop offset="100%" style="stop-color:#0f3460"/>
+    </linearGradient>
+    <linearGradient id="accent1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e94560"/>
+      <stop offset="50%" style="stop-color:#a2d2ff"/>
+      <stop offset="100%" style="stop-color:#bde0fe"/>
+    </linearGradient>
+    <filter id="glow1">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="nebula1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#e94560;stop-opacity:0.4"/>
+      <stop offset="50%" style="stop-color:#a2d2ff;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#1a0a2e;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1920" height="640" fill="url(#bg1)"/>
+  
+  <!-- Nebula Clouds -->
+  <ellipse cx="400" cy="320" rx="300" ry="200" fill="url(#nebula1)"/>
+  <ellipse cx="960" cy="280" rx="400" ry="250" fill="url(#nebula1)"/>
+  <ellipse cx="1500" cy="350" rx="350" ry="180" fill="url(#nebula1)"/>
+  
+  <!-- Stars -->
+  <g fill="#ffffff">
+    <circle cx="150" cy="80" r="2" opacity="0.9"/>
+    <circle cx="300" cy="120" r="1.5" opacity="0.7"/>
+    <circle cx="450" cy="60" r="2.5" opacity="0.8"/>
+    <circle cx="600" cy="100" r="1" opacity="0.6"/>
+    <circle cx="750" cy="70" r="2" opacity="0.9"/>
+    <circle cx="900" cy="110" r="1.5" opacity="0.7"/>
+    <circle cx="1050" cy="50" r="2" opacity="0.8"/>
+    <circle cx="1200" cy="90" r="1" opacity="0.6"/>
+    <circle cx="1350" cy="65" r="2.5" opacity="0.9"/>
+    <circle cx="1500" cy="105" r="1.5" opacity="0.7"/>
+    <circle cx="1650" cy="75" r="2" opacity="0.8"/>
+    <circle cx="1800" cy="95" r="1" opacity="0.6"/>
+    <circle cx="200" cy="200" r="1" opacity="0.5"/>
+    <circle cx="500" cy="180" r="1.5" opacity="0.6"/>
+    <circle cx="800" cy="220" r="1" opacity="0.5"/>
+    <circle cx="1100" cy="190" r="1.5" opacity="0.6"/>
+    <circle cx="1400" cy="210" r="1" opacity="0.5"/>
+    <circle cx="1700" cy="185" r="1.5" opacity="0.6"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="960" y="300" font-family="Arial, sans-serif" font-size="80" font-weight="bold" 
+        fill="url(#accent1)" text-anchor="middle" filter="url(#glow1)">🌌 NebulaQQ</text>
+  
+  <!-- Subtitle -->
+  <text x="960" y="370" font-family="Arial, sans-serif" font-size="32" fill="#a2d2ff" 
+        text-anchor="middle">新一代现代化 QQ 机器人框架</text>
+  
+  <!-- Accent Line -->
+  <rect x="660" y="410" width="600" height="4" fill="url(#accent1)" rx="2"/>
+  
+  <!-- Bottom decoration -->
+  <rect x="0" y="620" width="1920" height="20" fill="url(#accent1)" opacity="0.3"/>
+</svg>

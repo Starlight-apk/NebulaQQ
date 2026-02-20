@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="webui-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0c29"/>
+      <stop offset="50%" style="stop-color:#302b63"/>
+      <stop offset="100%" style="stop-color:#24243e"/>
+    </linearGradient>
+    <linearGradient id="webui-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e94560"/>
+      <stop offset="100%" style="stop-color:#a2d2ff"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1920" height="1080" fill="url(#webui-bg)"/>
+  
+  <!-- Sidebar -->
+  <rect x="0" y="0" width="280" height="1080" fill="#1a1a2e"/>
+  
+  <!-- Logo Area -->
+  <rect x="0" y="0" width="280" height="80" fill="#16213e"/>
+  <text x="140" y="50" font-family="Arial" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">🌌 NebulaQQ</text>
+  
+  <!-- Navigation -->
+  <g fill="#a2d2ff" font-family="Arial" font-size="18">
+    <text x="40" y="140">📊 概览 Dashboard</text>
+    <text x="40" y="190">🔌 插件管理 Plugins</text>
+    <text x="40" y="240">🔷 模块管理 Modules</text>
+    <text x="40" y="290">🎨 主题设置 Themes</text>
+    <text x="40" y="340">⚙️ 系统配置 Settings</text>
+    <text x="40" y="390">📝 日志查看 Logs</text>
+  </g>
+  
+  <!-- Main Content Area -->
+  <rect x="280" y="0" width="1640" height="1080" fill="#0f0c29"/>
+  
+  <!-- Header -->
+  <rect x="280" y="0" width="1640" height="80" fill="#1a1a2e"/>
+  <text x="320" y="50" font-family="Arial" font-size="28" fill="#ffffff">WebUI 控制面板</text>
+  
+  <!-- Dashboard Cards -->
+  <rect x="320" y="120" width="380" height="200" rx="16" fill="#16213e"/>
+  <rect x="740" y="120" width="380" height="200" rx="16" fill="#16213e"/>
+  <rect x="1160" y="120" width="380" height="200" rx="16" fill="#16213e"/>
+  
+  <!-- Card Titles -->
+  <text x="510" y="170" font-family="Arial" font-size="20" fill="#ffffff" text-anchor="middle">机器人状态</text>
+  <text x="930" y="170" font-family="Arial" font-size="20" fill="#ffffff" text-anchor="middle">在线插件</text>
+  <text x="1350" y="170" font-family="Arial" font-size="20" fill="#ffffff" text-anchor="middle">消息统计</text>
+  
+  <!-- Status Indicators -->
+  <circle cx="510" cy="240" r="40" fill="#4ade80"/>
+  <text x="510" y="250" font-family="Arial" font-size="18" fill="#000" text-anchor="middle" font-weight="bold">运行中</text>
+  
+  <text x="930" y="240" font-family="Arial" font-size="48" fill="#a2d2ff" text-anchor="middle">8</text>
+  
+  <text x="1350" y="240" font-family="Arial" font-size="36" fill="#e94560" text-anchor="middle">1,234</text>
+  
+  <!-- Chart Area -->
+  <rect x="320" y="360" width="760" height="400" rx="16" fill="#16213e"/>
+  <text x="400" y="400" font-family="Arial" font-size="20" fill="#ffffff">消息趋势</text>
+  
+  <!-- Fake Chart -->
+  <polyline points="360,700 420,680 480,650 540,600 600,580 660,520 720,500 780,480 840,450 900,420 960,400 1020,380" 
+            fill="none" stroke="url(#webui-accent)" stroke-width="3"/>
+  
+  <!-- Log Area -->
+  <rect x="1120" y="360" width="420" height="400" rx="16" fill="#16213e"/>
+  <text x="1160" y="400" font-family="Arial" font-size="20" fill="#ffffff">实时日志</text>
+  
+  <!-- Log Lines -->
+  <text x="1160" y="440" font-family="monospace" font-size="12" fill="#4ade80">[INFO] Bot started</text>
+  <text x="1160" y="465" font-family="monospace" font-size="12" fill="#a2d2ff">[MSG] Group message received</text>
+  <text x="1160" y="490" font-family="monospace" font-size="12" fill="#e94560">[PLUGIN] Hello plugin loaded</text>
+  <text x="1160" y="515" font-family="monospace" font-size="12" fill="#4ade80">[SUCCESS] Command executed</text>
+  <text x="1160" y="540" font-family="monospace" font-size="12" fill="#a2d2ff">[MSG] Private message received</text>
+  
+  <!-- Bottom decoration -->
+  <rect x="280" y="1060" width="1640" height="20" fill="url(#webui-accent)" opacity="0.3"/>
+  
+  <text x="1200" y="1050" font-family="Arial" font-size="16" fill="#6c7a89" text-anchor="middle">NebulaQQ WebUI - Material Design 3 × 明日方舟美学</text>
+</svg>

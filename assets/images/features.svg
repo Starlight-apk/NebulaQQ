@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0a2e"/>
+      <stop offset="100%" style="stop-color:#0f3460"/>
+    </linearGradient>
+    <linearGradient id="accent2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e94560"/>
+      <stop offset="50%" style="stop-color:#a2d2ff"/>
+      <stop offset="100%" style="stop-color:#bde0fe"/>
+    </linearGradient>
+    <filter id="shadow2">
+      <feDropShadow dx="2" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  
+  <rect width="1600" height="800" fill="url(#bg2)"/>
+  
+  <!-- Title -->
+  <text x="800" y="70" font-family="Arial" font-size="42" font-weight="bold" 
+        fill="url(#accent2)" text-anchor="middle">✨ NebulaQQ 特性亮点</text>
+  
+  <!-- Feature Cards Row 1 -->
+  <g filter="url(#shadow2)">
+    <rect x="80" y="120" width="340" height="240" rx="20" fill="#16213e"/>
+    <rect x="440" y="120" width="340" height="240" rx="20" fill="#16213e"/>
+    <rect x="800" y="120" width="340" height="240" rx="20" fill="#16213e"/>
+    <rect x="1160" y="120" width="340" height="240" rx="20" fill="#16213e"/>
+  </g>
+  
+  <!-- Card 1: Plugin System -->
+  <text x="250" y="190" font-family="Arial" font-size="56" text-anchor="middle">🧩</text>
+  <text x="250" y="245" font-family="Arial" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">Plugin System</text>
+  <text x="250" y="280" font-family="Arial" font-size="16" fill="#a2d2ff" text-anchor="middle">依赖管理 · 热重载</text>
+  <text x="250" y="320" font-family="Arial" font-size="14" fill="#6c7a89" text-anchor="middle">强大的插件系统</text>
+  <text x="250" y="345" font-family="Arial" font-size="14" fill="#6c7a89" text-anchor="middle">支持自动安装依赖</text>
+  
+  <!-- Card 2: Module System -->
+  <text x="610" y="190" font-family="Arial" font-size="56" text-anchor="middle">🔷</text>
+  <text x="610" y="245" font-family="Arial" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">Module System</text>
+  <text x="610" y="280" font-family="Arial" font-size="16" fill="#a2d2ff" text-anchor="middle">按需加载 · 热插拔</text>
+  <text x="610" y="320" font-family="Arial" font-size="14" fill="#6c7a89" text-anchor="middle">完全模块化架构</text>
+  <text x="610" y="345" font-family="Arial" font-size="14" fill="#6c7a89" text-anchor="middle">支持热插拔模块</text>
+  
+  <!-- Card 3: Theme System -->
+  <text x="970" y="190" font-family="Arial" font-size="56" text-anchor="middle">🎨</text>
+  <text x="970" y="245" font-family="Arial" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">Theme System</text>
+  <text x="970" y="280" font-family="Arial" font-size="16" fill="#a2d2ff" text-anchor="middle">自定义主题 · 个性化</text>
+  <text x="970" y="320" font-family="Arial" font-size="14" fill="#6c7a89" text-anchor="middle">丰富的主题系统</text>
+  <text x="970" y="345" font-family="Arial" font-size="14" fill="#6c7a89" text-anchor="middle">个性化你的机器人</text>
+  
+  <!-- Card 4: High Performance -->
+  <text x="1330" y="190" font-family="Arial" font-size="56" text-anchor="middle">⚡</text>
+  <text x="1330" y="245" font-family="Arial" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">High Performance</text>
+  <text x="1330" y="280" font-family="Arial" font-size="16" fill="#a2d2ff" text-anchor="middle">连接池优化 · 缓存</text>
+  <text x="1330" y="320" font-family="Arial" font-size="14" fill="#6c7a89" text-anchor="middle">优化的连接池</text>
+  <text x="1330" y="345" font-family="Arial" font-size="14" fill="#6c7a89" text-anchor="middle">智能缓存系统</text>
+  
+  <!-- Feature Cards Row 2 -->
+  <g filter="url(#shadow2)">
+    <rect x="80" y="420" width="340" height="240" rx="20" fill="#16213e"/>
+    <rect x="440" y="420" width="340" height="240" rx="20" fill="#16213e"/>
+    <rect x="800" y="420" width="340" height="240" rx="20" fill="#16213e"/>
+    <rect x="1160" y="420" width="340" height="240" rx="20" fill="#16213e"/>
+  </g>
+  
+  <!-- Card 5: OneBot -->
+  <text x="250" y="490" font-family="Arial" font-size="56" text-anchor="middle">🔌</text>
+  <text x="250" y="545" font-family="Arial" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">OneBot Protocol</text>
+  <text x="250" y="580" font-family="Arial" font-size="16" fill="#a2d2ff" text-anchor="middle">完整协议 · v11 标准</text>
+  <text x="250" y="620" font-family="Arial" font-size="14" fill="#6c7a89" text-anchor="middle">OneBot v11 协议</text>
+  <text x="250" y="645" font-family="Arial" font-size="14" fill="#6c7a89" text-anchor="middle">完整功能支持</text>
+  
+  <!-- Card 6: TypeScript -->
+  <text x="610" y="490" font-family="Arial" font-size="56" text-anchor="middle">📦</text>
+  <text x="610" y="545" font-family="Arial" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">TypeScript</text>
+  <text x="610" y="580" font-family="Arial" font-size="16" fill="#a2d2ff" text-anchor="middle">类型定义 · 开发体验</text>
+  <text x="610" y="620" font-family="Arial" font-size="14" fill="#6c7a89" text-anchor="middle">完整类型定义</text>
+  <text x="610" y="645" font-family="Arial" font-size="14" fill="#6c7a89" text-anchor="middle">优秀的开发体验</text>
+  
+  <!-- Card 7: Termux -->
+  <text x="970" y="490" font-family="Arial" font-size="56" text-anchor="middle">📱</text>
+  <text x="970" y="545" font-family="Arial" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">Termux Support</text>
+  <text x="970" y="580" font-family="Arial" font-size="16" fill="#a2d2ff" text-anchor="middle">ARM64 · 移动端运行</text>
+  <text x="970" y="620" font-family="Arial" font-size="14" fill="#6c7a89" text-anchor="middle">完美支持 ARM64</text>
+  <text x="970" y="645" font-family="Arial" font-size="14" fill="#6c7a89" text-anchor="middle">移动端可运行</text>
+  
+  <!-- Card 8: WebUI -->
+  <text x="1330" y="490" font-family="Arial" font-size="56" text-anchor="middle">🌐</text>
+  <text x="1330" y="545" font-family="Arial" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">WebUI</text>
+  <text x="1330" y="580" font-family="Arial" font-size="16" fill="#a2d2ff" text-anchor="middle">MD3 · 明日方舟美学</text>
+  <text x="1330" y="620" font-family="Arial" font-size="14" fill="#6c7a89" text-anchor="middle">Material Design 3</text>
+  <text x="1330" y="645" font-family="Arial" font-size="14" fill="#6c7a89" text-anchor="middle">明日方舟美学风格</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="100" cy="750" r="30" fill="url(#accent2)" opacity="0.2"/>
+  <circle cx="1500" cy="780" r="50" fill="url(#accent2)" opacity="0.15"/>
+</svg>
