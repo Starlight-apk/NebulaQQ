@@ -9,6 +9,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue.svg)](https://www.typescriptlang.org/)
 [![OneBot](https://img.shields.io/badge/OneBot-v11-orange.svg)](https://onebot.dev/)
 [![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20macOS%20%7C%20Windows%20%7C%20ARM64-lightgrey.svg)](https://nebulaqq.dev)
+[![WebUI](https://img.shields.io/badge/WebUI-MD3%20%7C%20Arknights-purple.svg)](./packages/webui)
 
 </div>
 
@@ -23,6 +24,7 @@
 - 🔌 **OneBot 协议** - 完整支持 OneBot v11 标准协议
 - 📦 **TypeScript** - 完整的类型定义，优秀的开发体验
 - 📱 **Termux 支持** - 完美支持 ARM64 架构，可在手机上运行
+- 🌐 **WebUI** - Material Design 3 + 明日方舟美学 控制面板
 
 ## 🚀 快速开始
 
@@ -65,6 +67,18 @@ npm install
 npm run dev
 ```
 
+### 启动 WebUI
+
+```bash
+# 构建 WebUI
+npm run build:webui
+
+# 启动 WebUI 服务器
+npm run start:webui
+
+# 访问 http://localhost:8080
+```
+
 ## 📱 Termux (ARM64) 用户
 
 ```bash
@@ -91,7 +105,7 @@ chmod +x install.sh
 | 插件系统 | ✅ | ✅ 增强版 (依赖管理) |
 | 模块系统 | 部分 | ✅ 完整版 (热插拔) |
 | 主题系统 | ❌ | ✅ 独家支持 |
-| WebUI | ✅ | ❌ (精简核心) |
+| WebUI | ✅ (基础) | ✅ (MD3 + 明日方舟) |
 | 文件管理 | ✅ | ❌ (精简核心) |
 | 接口调试 | ✅ | ❌ (精简核心) |
 | 性能优化 | 标准 | ✅ 增强版 (连接池) |
@@ -134,15 +148,39 @@ bot.start();
 
 ## 📦 核心模块
 
-| 模块 | 说明 |
-|------|------|
-| `@nebulaqq/core` | 核心模块 - 事件系统、消息处理 |
-| `@nebulaqq/plugin-sdk` | 插件 SDK |
-| `@nebulaqq/module-sdk` | 模块 SDK |
-| `@nebulaqq/theme-sdk` | 主题 SDK |
-| `@nebulaqq/adapter-onebot` | OneBot 协议适配器 |
-| `@nebulaqq/network` | 网络模块 |
-| `@nebulaqq/utils` | 工具函数库 |
+| 模块 | 说明 | 状态 |
+|------|------|------|
+| `@nebulaqq/core` | 核心模块 - 事件系统、消息处理 | ✅ |
+| `@nebulaqq/plugin-sdk` | 插件 SDK | 🔄 |
+| `@nebulaqq/module-sdk` | 模块 SDK | ✅ |
+| `@nebulaqq/theme-sdk` | 主题 SDK | ✅ |
+| `@nebulaqq/adapter-onebot` | OneBot 协议适配器 | ✅ |
+| `@nebulaqq/network` | 网络模块 | ✅ |
+| `@nebulaqq/utils` | 工具函数库 | ✅ |
+| `@nebulaqq/webui` | WebUI (MD3 + 明日方舟) | ✅ |
+| `@nebulaqq/webui-server` | WebUI 后端服务器 | ✅ |
+
+## 🌐 WebUI
+
+NebulaQQ 内置精美的 Web 控制面板：
+
+- **Material Design 3** 设计规范
+- **明日方舟美学** 主题设计
+- 实时日志查看
+- 插件/模块管理
+- 主题切换
+- 响应式设计
+
+```bash
+# 开发模式
+npm run dev:webui
+
+# 生产构建
+npm run build:webui
+
+# 启动服务器
+npm run start:webui
+```
 
 ## 🔧 可用命令
 
@@ -155,6 +193,9 @@ npm run build
 
 # 运行示例
 npm run dev
+
+# 启动 WebUI
+npm run dev:webui
 
 # 类型检查
 npm run typecheck
@@ -170,6 +211,7 @@ npm run clean
 - [API 参考](./docs/api.md)
 - [Termux 指南](./TERMUX.md)
 - [框架结构](./FRAMEWORK.md)
+- [WebUI 文档](./packages/webui/README.md)
 
 ## 📄 开源协议
 
@@ -190,12 +232,14 @@ NebulaQQ 基于以下优秀项目构建：
 - [NapCatQQ](https://github.com/NapNeko/NapCatQQ)
 - [NapCatReforged](https://github.com/NapNeko/NapCatReforged)
 - [OneBot](https://onebot.dev/)
+- [Material Design](https://m3.material.io/)
+- [明日方舟](https://ak.hypergryph.com/)
 
 ---
 
 <div align="center">
 
-**Made with ❤️ by NebulaQQ Team**
+**Made with ❤️ by Starlight-apk Team**
 
 ⭐ 如果这个项目对你有帮助，请给我们一个 Star!
 

@@ -1,0 +1,156 @@
+// NebulaQQ WebUI 主样式表
+@import './variables';
+@import './mixins';
+
+// 重置样式
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: $ark-font-family;
+  background: var(--md-sys-color-background);
+  color: var(--md-sys-color-on-background);
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+// Material Web Components 样式覆盖
+md-filled-button {
+  --md-filled-button-container-color: #{$ark-primary};
+  --md-filled-button-label-text-color: #ffffff;
+  --md-filled-button-container-shape: #{$ark-radius-sm};
+  
+  &:hover {
+    --md-filled-button-container-color: #{darken($ark-primary, 10%)};
+  }
+}
+
+md-outlined-button {
+  --md-outlined-button-outline-color: #{$ark-primary};
+  --md-outlined-button-label-text-color: #{$ark-primary};
+  --md-outlined-button-container-shape: #{$ark-radius-sm};
+  
+  &:hover {
+    --md-outlined-button-container-color: rgba($ark-primary, 0.1);
+  }
+}
+
+md-icon {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+}
+
+// 工具类
+.ark-card {
+  @include arknights-card;
+}
+
+.ark-button {
+  @include arknights-button;
+}
+
+.ark-glow {
+  @include arts-glow;
+}
+
+.text-gradient {
+  @include text-gradient($ark-primary, $ark-accent);
+}
+
+// 加载状态
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  
+  .spinner {
+    @include loading-spinner(48px, $ark-primary);
+  }
+}
+
+// 空状态
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  text-align: center;
+  
+  md-icon {
+    font-size: 64px;
+    color: $ark-gray;
+    margin-bottom: 16px;
+  }
+  
+  h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  
+  p {
+    color: $ark-gray-light;
+  }
+}
+
+// 通知/提示
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 16px 24px;
+  border-radius: $ark-radius-md;
+  background: var(--md-sys-color-surface);
+  box-shadow: $ark-shadow-lg;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: slideIn 0.3s ease;
+  z-index: 1000;
+  
+  &.success {
+    border-left: 4px solid $ark-success;
+  }
+  
+  &.error {
+    border-left: 4px solid $ark-error;
+  }
+  
+  &.warning {
+    border-left: 4px solid $ark-warning;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+// 自定义滚动条
+@include custom-scrollbar;
+
+// 响应式
+@include respond-to(md) {
+  .ark-card {
+    padding: 16px;
+  }
+}

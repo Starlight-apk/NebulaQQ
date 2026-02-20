@@ -1,0 +1,89 @@
+// NebulaQQ WebUI 样式变量
+// Material Design 3 + 明日方舟美学
+
+// 明日方舟主题色
+$ark-primary: #0099cc;
+$ark-on-primary: #ffffff;
+$ark-primary-container: #003344;
+$ark-on-primary-container: #66ccff;
+
+$ark-secondary: #cc6699;
+$ark-on-secondary: #ffffff;
+$ark-secondary-container: #442233;
+$ark-on-secondary-container: #ff99cc;
+
+$ark-tertiary: #9966cc;
+$ark-on-tertiary: #ffffff;
+$ark-tertiary-container: #332244;
+$ark-on-tertiary-container: #cc99ff;
+
+// 功能色
+$ark-success: #00cc88;
+$ark-warning: #ffaa00;
+$ark-error: #ff4466;
+$ark-info: #0099cc;
+
+// 中性色
+$ark-gray: #666666;
+$ark-gray-light: #999999;
+$ark-gray-dark: #333333;
+
+// 浅色主题
+$ark-background-light: #f5f5f5;
+$ark-on-background-light: #1a1a1a;
+$ark-surface-light: #ffffff;
+$ark-on-surface-light: #1a1a1a;
+$ark-surface-variant-light: #e0e0e0;
+$ark-outline-light: #bdbdbd;
+
+// 深色主题 (明日方舟风格)
+$ark-background-dark: #0a0a0f;
+$ark-on-background-dark: #e0e0e0;
+$ark-surface-dark: #1a1a2e;
+$ark-on-surface-dark: #e0e0e0;
+$ark-surface-variant-dark: #2a2a3e;
+$ark-outline-dark: #4a4a5e;
+
+// 强调色 (源石技艺效果)
+$ark-accent: #ff6699;
+$ark-accent-glow: rgba(255, 102, 153, 0.5);
+
+// 渐变
+$ark-gradient-primary: linear-gradient(135deg, #0099cc, #006699);
+$ark-gradient-secondary: linear-gradient(135deg, #cc6699, #993366);
+$ark-gradient-arknights: linear-gradient(135deg, #0a0a0f, #1a1a2e, #2a2a3e);
+
+// 阴影
+$ark-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+$ark-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+$ark-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+$ark-shadow-glow: 0 0 20px rgba(0, 153, 204, 0.3);
+
+// 圆角
+$ark-radius-sm: 8px;
+$ark-radius-md: 12px;
+$ark-radius-lg: 16px;
+$ark-radius-xl: 24px;
+
+// 动画
+$ark-transition-fast: 0.15s ease;
+$ark-transition-normal: 0.3s ease;
+$ark-transition-slow: 0.5s ease;
+
+// 字体
+$ark-font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+$ark-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+// 明日方舟风格装饰
+$ark-pattern-diagonal: repeating-linear-gradient(
+  45deg,
+  transparent,
+  transparent 10px,
+  rgba(0, 153, 204, 0.05) 10px,
+  rgba(0, 153, 204, 0.05) 20px
+);
+
+$ark-pattern-grid: 
+  linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+$ark-pattern-grid-size: 20px;

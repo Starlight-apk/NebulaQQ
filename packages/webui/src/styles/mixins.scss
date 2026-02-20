@@ -1,0 +1,183 @@
+// NebulaQQ WebUI 样式混合
+
+// 明日方舟风格卡片
+@mixin arknights-card {
+  background: var(--md-sys-color-surface);
+  border-radius: $ark-radius-md;
+  padding: 20px;
+  box-shadow: $ark-shadow-md;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: $ark-gradient-primary;
+  }
+}
+
+// 源石技艺发光效果
+@mixin arts-glow {
+  box-shadow: $ark-shadow-glow;
+  
+  &:hover {
+    box-shadow: 0 0 30px rgba(0, 153, 204, 0.5);
+  }
+}
+
+// 明日方舟风格按钮
+@mixin arknights-button {
+  @include arknights-card;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all $ark-transition-normal;
+  border: none;
+  font-weight: 500;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $ark-shadow-lg;
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// 玻璃态效果
+@mixin glassmorphism {
+  background: rgba(26, 26, 46, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+// 响应式断点
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sm {
+    @media (max-width: 576px) { @content; }
+  } @else if $breakpoint == md {
+    @media (max-width: 768px) { @content; }
+  } @else if $breakpoint == lg {
+    @media (max-width: 992px) { @content; }
+  } @else if $breakpoint == xl {
+    @media (max-width: 1200px) { @content; }
+  }
+}
+
+// 文字渐变
+@mixin text-gradient($from, $to) {
+  background: linear-gradient(135deg, $from, $to);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// 加载动画
+@mixin loading-spinner($size: 40px, $color: $ark-primary) {
+  width: $size;
+  height: $size;
+  border: 3px solid rgba($color, 0.2);
+  border-top-color: $color;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+// 源石晶格装饰
+@mixin originium-crystal {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: $ark-gradient-primary;
+}
+
+// 数据展示卡片
+@mixin data-card {
+  @include arknights-card;
+  
+  .data-value {
+    font-size: 32px;
+    font-weight: 700;
+    @include text-gradient($ark-primary, $ark-accent);
+  }
+  
+  .data-label {
+    font-size: 14px;
+    color: var(--md-sys-color-on-surface);
+    opacity: 0.7;
+  }
+}
+
+// 状态指示器
+@mixin status-indicator($status) {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  
+  @if $status == online {
+    background: $ark-success;
+    box-shadow: 0 0 8px $ark-success;
+  } @else if $status == warning {
+    background: $ark-warning;
+    box-shadow: 0 0 8px $ark-warning;
+  } @else if $status == error {
+    background: $ark-error;
+    box-shadow: 0 0 8px $ark-error;
+  } @else if $status == starting {
+    background: $ark-warning;
+    animation: pulse 1.5s infinite;
+  }
+}
+
+// 动画关键帧
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 153, 204, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(0, 153, 204, 0.6); }
+}
+
+// 背景图案
+@mixin arknights-background {
+  background: 
+    $ark-pattern-diagonal,
+    $ark-gradient-arknights;
+  background-size: 
+    40px 40px,
+    100% 100%;
+}
+
+// 滚动条样式
+@mixin custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: var(--md-sys-color-surface-variant);
+    border-radius: 4px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: $ark-primary;
+    border-radius: 4px;
+    
+    &:hover {
+      background: $ark-accent;
+    }
+  }
+}
