@@ -28,8 +28,7 @@
   "dependencies": {
     "@vueuse/core": "^10.7.0",
     "gsap": "^3.12.4",
-    "three": "^0.160.0",
-    "@vue-threejs/core": "^0.1.0"
+    "three": "^0.160.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.0",
