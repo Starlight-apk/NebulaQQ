@@ -2,6 +2,9 @@
 REM NebulaQQ 一键安装和启动脚本 (Windows)
 REM 支持 x64、ARM64 Windows
 
+REM 切换到脚本所在目录
+cd /d "%~dp0"
+
 setlocal enabledelayedexpansion
 
 REM 颜色定义 (需要 Windows 10+)
