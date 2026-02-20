@@ -1,11 +1,11 @@
 /**
  * NebulaQQ - 插件系统
- * 
+ *
  * 支持插件依赖管理、热重载、生命周期管理
  */
 
 import { EventEmitter } from 'events';
-import type { MessageEvent, PluginContext } from '../types';
+import type { MessageEvent, PluginContext, MessageSegment } from '../types';
 import type { Logger } from '../logger/Logger';
 
 /** 插件元数据 */
@@ -53,9 +53,9 @@ export interface MessageContext {
   /** 消息内容 */
   message: string;
   /** 发送者 ID */
-  userId: string;
+  userId: number;
   /** 群 ID（如果是群消息） */
-  groupId?: string;
+  groupId?: number;
   /** 回复消息 */
   reply: (message: string | MessageSegment[]) => Promise<boolean>;
   /** 发送消息 */
@@ -69,7 +69,8 @@ export interface MessageContext {
 /** 消息段 */
 export interface MessageSegment {
   type: string;
-  data: Record<string, unknown>;
+  data?: Record<string, unknown>;
+  [key: string]: unknown;
 }
 
 /** 通知上下文 */

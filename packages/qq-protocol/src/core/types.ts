@@ -15,13 +15,14 @@ export interface QQClientVersion {
 }
 
 /** 登录状态 */
-export type LoginStatus = 
+export type LoginStatus =
   | 'offline'      // 离线
   | 'logging_in'   // 登录中
   | 'qr_scan'      // 等待扫码
   | 'qr_scanned'   // 已扫码
   | 'need_sms'     // 需要短信验证
   | 'sms_sent'     // 短信已发送
+  | 'need_slider'  // 需要滑块验证
   | 'online'       // 在线
   | 'error';       // 错误
 

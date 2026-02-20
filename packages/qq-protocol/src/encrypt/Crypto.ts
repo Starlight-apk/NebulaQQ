@@ -122,13 +122,21 @@ export class ECDH {
   }
 
   /**
+   * 设置公钥（用于接收方）
+   */
+  setPublicKey(publicKey: Buffer): void {
+    this.privateKey.setPublicKey(publicKey);
+  }
+
+  /**
    * 从原始公钥创建 ECDH 实例
    */
   static fromPublicKey(publicKey: Buffer): ECDH {
     const ecdh = crypto.createECDH(ECDH.CURVE);
     ecdh.setPublicKey(publicKey);
-    const instance = new ECDH();
-    (instance as any).privateKey = ecdh;
+    const instance = Object.create(ECDH.prototype);
+    instance.privateKey = ecdh;
+    instance.publicKey = publicKey;
     return instance;
   }
 }

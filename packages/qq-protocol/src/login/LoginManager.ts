@@ -36,19 +36,19 @@ export class LoginManager extends EventEmitter {
   private loginKey: Buffer | null = null;
 
   /** 会话 ID */
-  private sessionId: Buffer | null = null;
+  private sessionId: Buffer | undefined = undefined;
 
   /** 序列号 */
   private sequence: number = 0;
 
   /** 二维码 Token */
-  private qrcodeToken: string | null = null;
+  private qrcodeToken: string | undefined = undefined;
 
   /** 短信验证码 Token */
-  private smsToken: string | null = null;
+  private smsToken: string | undefined = undefined;
 
   /** 滑块验证码 Ticket */
-  private sliderTicket: string | null = null;
+  private sliderTicket: string | undefined = undefined;
 
   constructor(device?: DeviceInfo) {
     super();

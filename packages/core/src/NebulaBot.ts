@@ -444,4 +444,3 @@ export class NebulaBot extends EventEmitter {
 }
 
 export { definePlugin };
-export type { Plugin, PluginManifest, PluginContext, MessageSegment };

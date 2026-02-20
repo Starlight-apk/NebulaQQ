@@ -19,12 +19,13 @@ export type MessageType = 'private' | 'group' | 'discuss';
 /** 消息段类型 */
 export interface MessageSegment {
   type: string;
-  data: Record<string, unknown>;
+  data?: Record<string, unknown>;
+  [key: string]: unknown;
 }
 
 /** 发送者信息 */
 export interface Sender {
-  user_id: string;
+  user_id: number;
   nickname: string;
   sex?: 'male' | 'female' | 'unknown';
   age?: number;
@@ -38,22 +39,22 @@ export interface Sender {
 /** 基础事件接口 */
 export interface BaseEvent {
   time: number;
-  self_id: string;
-  post_type: EventType;
+  self_id: number;
+  post_type: string;
 }
 
 /** 消息事件 */
 export interface MessageEvent extends BaseEvent {
-  post_type: EventType.MESSAGE;
+  post_type: 'message';
   message_type: MessageType;
   sub_type?: 'friend' | 'group' | 'normal';
-  message_id: string;
-  user_id: string;
+  message_id: number;
+  user_id: number;
   sender: Sender;
   message: string | MessageSegment[];
   raw_message: string;
   font: number;
-  group_id?: string;
+  group_id?: number;
   anonymous?: {
     id: number;
     name: string;
@@ -70,11 +71,11 @@ export interface PrivateMessageEvent extends MessageEvent {
 /** 群聊消息事件 */
 export interface GroupMessageEvent extends MessageEvent {
   message_type: 'group';
-  group_id: string;
+  group_id: number;
 }
 
 /** 通知事件类型 */
-export type NoticeType = 
+export type NoticeType =
   | 'group_upload'
   | 'group_admin'
   | 'group_decrease'
@@ -88,10 +89,10 @@ export type NoticeType =
 
 /** 通知事件 */
 export interface NoticeEvent extends BaseEvent {
-  post_type: EventType.NOTICE;
+  post_type: 'notice';
   notice_type: NoticeType;
-  user_id: string;
-  group_id?: string;
+  user_id: number;
+  group_id?: number;
   [key: string]: unknown;
 }
 
@@ -100,12 +101,12 @@ export type RequestType = 'friend' | 'group';
 
 /** 请求事件 */
 export interface RequestEvent extends BaseEvent {
-  post_type: EventType.REQUEST;
+  post_type: 'request';
   request_type: RequestType;
-  user_id: string;
+  user_id: number;
   comment: string;
   flag: string;
-  group_id?: string;
+  group_id?: number;
 }
 
 /** 元事件类型 */
@@ -113,7 +114,7 @@ export type MetaEventType = 'lifecycle' | 'heartbeat';
 
 /** 元事件 */
 export interface MetaEvent extends BaseEvent {
-  post_type: EventType.META;
+  post_type: 'meta_event';
   meta_event_type: MetaEventType;
   status?: Record<string, unknown>;
   interval?: number;
