@@ -28,11 +28,6 @@
           </div>
           
           <div class="form-group">
-            <label class="form-label">机器人 QQ 号</label>
-            <input type="text" class="input" v-model="settings.botQQ" />
-          </div>
-          
-          <div class="form-group">
             <label class="form-label">主人 QQ 号</label>
             <input type="text" class="input" v-model="settings.masterQQ" />
           </div>
@@ -40,6 +35,38 @@
           <div class="form-group">
             <label class="form-label">命令前缀</label>
             <input type="text" class="input" v-model="settings.commandPrefix" />
+          </div>
+        </GlassCard>
+        
+        <GlassCard class="settings-panel" v-if="activeTab === 'account'">
+          <h2 class="panel-title">账号管理</h2>
+          
+          <div class="account-list">
+            <div class="account-item" v-for="acc in accounts" :key="acc.id">
+              <div class="account-item__info">
+                <div class="account-item__name">{{ acc.name }}</div>
+                <div class="account-item__id">QQ: {{ acc.id }}</div>
+                <div class="account-item__status">
+                  <span class="badge" :class="acc.enabled ? 'badge--success' : 'badge--secondary'">
+                    {{ acc.enabled ? '已启用' : '已禁用' }}
+                  </span>
+                  <span class="badge" :class="acc.autoLogin ? 'badge--primary' : 'badge--secondary'">
+                    {{ acc.autoLogin ? '自动登录' : '手动登录' }}
+                  </span>
+                </div>
+              </div>
+              <div class="account-item__actions">
+                <GlassButton variant="ghost" size="sm" @click="toggleAccount(acc.id)">
+                  {{ acc.enabled ? '禁用' : '启用' }}
+                </GlassButton>
+                <GlassButton variant="ghost" size="sm" @click="deleteAccount(acc.id)">删除</GlassButton>
+              </div>
+            </div>
+            
+            <div class="account-add" @click="showAddAccount = true">
+              <span class="account-add__icon">+</span>
+              <span>添加账号</span>
+            </div>
           </div>
         </GlassCard>
         
@@ -148,6 +175,7 @@ const activeTab = ref('basic');
 
 const tabs = [
   { key: 'basic', name: '基本设置', icon: '🔧' },
+  { key: 'account', name: '账号管理', icon: '👤' },
   { key: 'adapter', name: '适配器', icon: '🔌' },
   { key: 'log', name: '日志', icon: '📝' },
   { key: 'advanced', name: '高级', icon: '⚡' },
@@ -155,7 +183,6 @@ const tabs = [
 
 const settings = ref({
   botName: 'NebulaQQ Bot',
-  botQQ: '',
   masterQQ: '',
   commandPrefix: '/',
   adapterType: 'websocket',
@@ -171,6 +198,27 @@ const settings = ref({
   reconnectInterval: 5,
   maxRetries: 5,
 });
+
+const showAddAccount = ref(false);
+
+const accounts = ref([
+  { id: '12345678', name: '机器人 1 号', enabled: true, autoLogin: true },
+  { id: '87654321', name: '机器人 2 号', enabled: false, autoLogin: false },
+]);
+
+const toggleAccount = (id: string) => {
+  const acc = accounts.value.find(a => a.id === id);
+  if (acc) {
+    acc.enabled = !acc.enabled;
+  }
+};
+
+const deleteAccount = (id: string) => {
+  const index = accounts.value.findIndex(a => a.id === id);
+  if (index !== -1) {
+    accounts.value.splice(index, 1);
+  }
+};
 
 const resetSettings = () => {
   // 重置逻辑
@@ -313,5 +361,107 @@ const saveSettings = () => {
   gap: var(--spacing-md);
   padding-top: var(--spacing-lg);
   border-top: 1px solid var(--glass-border);
+}
+
+.account-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.account-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+  
+  &:hover {
+    background: var(--glass-bg-hover);
+    transform: translateX(4px);
+  }
+  
+  &__info {
+    flex: 1;
+  }
+  
+  &__name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+  
+  &__id {
+    font-size: 14px;
+    color: var(--text-tertiary);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  &__status {
+    display: flex;
+    gap: var(--spacing-sm);
+  }
+  
+  &__actions {
+    display: flex;
+    gap: var(--spacing-sm);
+  }
+}
+
+.account-add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl);
+  background: var(--glass-bg);
+  border: 2px dashed var(--glass-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  color: var(--text-secondary);
+  
+  &:hover {
+    border-color: var(--color-primary);
+    background: var(--glass-bg-hover);
+    color: var(--color-primary);
+  }
+  
+  &__icon {
+    font-size: 32px;
+    margin-bottom: var(--spacing-sm);
+  }
+}
+
+.badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: var(--radius-full);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  
+  &--primary {
+    background: rgba(162, 210, 255, 0.2);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+  
+  &--success {
+    background: rgba(74, 222, 128, 0.2);
+    border-color: var(--success);
+    color: var(--success);
+  }
+  
+  &--secondary {
+    background: rgba(108, 122, 137, 0.2);
+    border-color: var(--text-tertiary);
+    color: var(--text-tertiary);
+  }
 }
 </style>
