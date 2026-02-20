@@ -1,34 +1,16 @@
 {
-  "name": "nebulaqq-example-basic",
+  "name": "my-nebula-bot",
   "version": "1.0.0",
-  "description": "NebulaQQ 基础示例 - 演示如何创建简单的 QQ 机器人",
+  "description": "My NebulaQQ Bot",
   "type": "module",
   "scripts": {
-    "dev": "node --loader ts-node/esm index.ts",
-    "start": "node index.mjs",
+    "dev": "node --loader ts-node/esm src/index.ts",
+    "start": "node dist/index.js",
     "build": "tsc"
   },
-  "keywords": [
-    "nebulaqq",
-    "example",
-    "qq",
-    "bot"
-  ],
-  "author": "NebulaQQ Team",
+  "keywords": ["nebulaqq", "bot", "qq"],
+  "author": "",
   "license": "MIT",
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "os": [
-    "linux",
-    "darwin",
-    "win32"
-  ],
-  "cpu": [
-    "x64",
-    "arm64",
-    "arm"
-  ],
   "dependencies": {
     "@nebulaqq/core": "file:../../packages/core",
     "@nebulaqq/utils": "file:../../packages/utils"
