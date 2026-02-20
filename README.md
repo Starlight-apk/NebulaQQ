@@ -21,6 +21,12 @@
 
 ---
 
+### 🌍 选择语言 / Select Language
+
+[🇨🇳 简体中文](README.md) · [🇺🇸 English](README.en.md) · [🇪🇸 Español](i18n/README.es.md) · [🇷🇺 Русский](i18n/README.ru.md) · [🇯🇵 日本語](i18n/README.ja.md) · [🇰🇷 한국어](i18n/README.ko.md)
+
+---
+
 [🚀 快速开始](#-快速开始) · [📦 核心模块](#-核心模块) · [🌐 WebUI](#-webui) · [📖 文档](#-文档) · [💬 社区](#-社区)
 
 </div>

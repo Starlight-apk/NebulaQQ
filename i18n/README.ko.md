@@ -8,8 +8,13 @@
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18.0.0-green.svg?style=for-the-badge)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue.svg?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 
-**언어:** 
-[🇨🇳 中文](../README.md) | [🇺🇸 English](../README.en.md) | [🇪🇸 Español](README.es.md) | [🇷🇺 Русский](README.ru.md) | [🇯🇵 日本語](README.ja.md) | [🇰🇷 한국어](README.ko.md)
+---
+
+**🌍 언어 선택:**
+
+[🇨🇳 简体中文](../README.md) · [🇺🇸 English](../README.en.md) · [🇪🇸 Español](README.es.md) · [🇷🇺 Русский](README.ru.md) · [🇯🇵 日本語](README.ja.md) · [🇰🇷 한국어](README.ko.md)
+
+---
 
 </div>
 

@@ -20,8 +20,9 @@
 
 [📖 Languages](#-languages) · [🚀 Quick Start](#-quick-start) · [📦 Modules](#-core-modules) · [🌐 WebUI](#-webui) · [📚 Docs](#-documentation)
 
-**Languages:** 
-[🇨🇳 中文](README.md) | [🇺🇸 English](README.en.md) | [🇪🇸 Español](i18n/README.es.md) | [🇷🇺 Русский](i18n/README.ru.md) | [🇯🇵 日本語](i18n/README.ja.md) | [🇰🇷 한국어](i18n/README.ko.md)
+**🌍 Select Language:**
+
+[🇨🇳 简体中文](README.md) · [🇺🇸 English](README.en.md) · [🇪🇸 Español](i18n/README.es.md) · [🇷🇺 Русский](i18n/README.ru.md) · [🇯🇵 日本語](i18n/README.ja.md) · [🇰🇷 한국어](i18n/README.ko.md)
 
 </div>
 
