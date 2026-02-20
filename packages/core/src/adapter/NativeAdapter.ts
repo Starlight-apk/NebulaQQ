@@ -4,9 +4,8 @@
  */
 
 import { EventEmitter } from 'events';
-import { QQProtocol } from '@nebulaqq/qq-protocol';
+import { QQProtocol, DeviceGenerator } from '../qq-protocol';
 import { Logger, type Logger as ILogger } from '../logger/Logger';
-import { DeviceGenerator } from '@nebulaqq/qq-protocol';
 import type {
   ProtocolConfig,
   LoginConfig,
@@ -17,7 +16,7 @@ import type {
   FriendInfo,
   GroupInfo,
   GroupMemberInfo
-} from '@nebulaqq/qq-protocol';
+} from '../qq-protocol';
 
 /** 原生协议适配器配置 */
 export interface NativeAdapterConfig {
