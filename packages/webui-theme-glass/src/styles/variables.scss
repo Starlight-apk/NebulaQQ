@@ -1,0 +1,110 @@
+// ============================================
+// NebulaQQ WebUI 玻璃拟态主题 - CSS 变量
+// ============================================
+
+:root {
+  // 主色调 - 星云紫蓝渐变
+  --color-primary: #a2d2ff;
+  --color-primary-dark: #5c83df;
+  --color-primary-light: #cad7f0;
+  --color-secondary: #e94560;
+  --color-secondary-dark: #c73e54;
+  --color-accent: #bde0fe;
+  
+  // 背景色 - 深色星云
+  --bg-primary: #0f0c29;
+  --bg-secondary: #1a1a2e;
+  --bg-tertiary: #16213e;
+  --bg-gradient: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  --bg-gradient-mesh: radial-gradient(at 0% 0%, rgba(162, 210, 255, 0.1) 0px, transparent 50%),
+                       radial-gradient(at 100% 0%, rgba(233, 69, 96, 0.1) 0px, transparent 50%),
+                       radial-gradient(at 100% 100%, rgba(162, 210, 255, 0.15) 0px, transparent 50%),
+                       radial-gradient(at 0% 100%, rgba(189, 224, 254, 0.1) 0px, transparent 50%);
+  
+  // 文字颜色
+  --text-primary: #ffffff;
+  --text-secondary: #a2d2ff;
+  --text-tertiary: #6c7a89;
+  --text-muted: rgba(255, 255, 255, 0.5);
+  
+  // 毛玻璃效果
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-bg-hover: rgba(255, 255, 255, 0.08);
+  --glass-bg-active: rgba(255, 255, 255, 0.12);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border-highlight: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --glass-blur: blur(20px);
+  --glass-backdrop: saturate(180%);
+  
+  // 拟态效果
+  --neo-shadow-light: rgba(255, 255, 255, 0.08);
+  --neo-shadow-dark: rgba(0, 0, 0, 0.4);
+  --neo-bg: #1a1a2e;
+  --neo-pressed-bg: #16162a;
+  
+  // 3D 效果
+  --depth-1: translateZ(0);
+  --depth-2: translateZ(20px);
+  --depth-3: translateZ(40px);
+  --depth-4: translateZ(60px);
+  --perspective: 1000px;
+  --rotate-x: rotateX(5deg);
+  --rotate-y: rotateY(5deg);
+  
+  // 动画
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --transition-elastic: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+  // 圆角
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+  
+  // 间距
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  
+  // 状态颜色
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --error: #ef4444;
+  --info: #3b82f6;
+  
+  // 布局
+  --sidebar-width: 280px;
+  --sidebar-collapsed-width: 80px;
+  --header-height: 72px;
+}
+
+// 亮色主题变量
+[data-theme="light"] {
+  --bg-primary: #f0f4f8;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e2e8f0;
+  --bg-gradient: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 50%, #bcccdc 100%);
+  
+  --text-primary: #1a202c;
+  --text-secondary: #4a5568;
+  --text-tertiary: #718096;
+  
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-bg-hover: rgba(255, 255, 255, 0.7);
+  --glass-bg-active: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-border-highlight: rgba(255, 255, 255, 0.8);
+  
+  --neo-bg: #e2e8f0;
+  --neo-pressed-bg: #cbd5e0;
+  --neo-shadow-light: rgba(255, 255, 255, 0.9);
+  --neo-shadow-dark: rgba(0, 0, 0, 0.1);
+}

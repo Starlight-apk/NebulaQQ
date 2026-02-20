@@ -1,0 +1,333 @@
+// ============================================
+// NebulaQQ WebUI 玻璃拟态主题 - SCSS Mixins
+// ============================================
+
+@use "variables" as *;
+
+// 毛玻璃效果 mixin
+@mixin glass($bg: var(--glass-bg), $blur: var(--glass-blur), $border: var(--glass-border)) {
+  background: $bg;
+  backdrop-filter: var(--glass-backdrop) $blur;
+  -webkit-backdrop-filter: var(--glass-backdrop) $blur;
+  border: 1px solid $border;
+  box-shadow: var(--glass-shadow);
+}
+
+// 毛玻璃卡片
+@mixin glass-card($radius: var(--radius-lg)) {
+  @include glass;
+  border-radius: $radius;
+  transition: all var(--transition-base);
+  
+  &:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--glass-border-highlight);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.45);
+  }
+}
+
+// 拟态效果 mixin
+@mixin neumorphism($type: "flat") {
+  @if $type == "flat" {
+    background: var(--neo-bg);
+    box-shadow: 
+      8px 8px 16px var(--neo-shadow-dark),
+      -8px -8px 16px var(--neo-shadow-light);
+    border-radius: var(--radius-lg);
+  } @else if $type == "pressed" {
+    background: var(--neo-pressed-bg);
+    box-shadow: 
+      inset 8px 8px 16px var(--neo-shadow-dark),
+      inset -8px -8px 16px var(--neo-shadow-light);
+    border-radius: var(--radius-lg);
+  } @else if $type == "convex" {
+    background: linear-gradient(145deg, lighten(#1a1a2e, 5%), #1a1a2e);
+    box-shadow: 
+      8px 8px 16px var(--neo-shadow-dark),
+      -8px -8px 16px var(--neo-shadow-light);
+    border-radius: var(--radius-full);
+  }
+}
+
+// 3D 卡片效果
+@mixin card-3d($depth: 2) {
+  transform-style: preserve-3d;
+  perspective: var(--perspective);
+  transition: transform var(--transition-base);
+  
+  @if $depth == 1 {
+    transform: var(--depth-1);
+  } @else if $depth == 2 {
+    transform: var(--depth-2);
+  } @else if $depth == 3 {
+    transform: var(--depth-3);
+  } @else if $depth == 4 {
+    transform: var(--depth-4);
+  }
+  
+  &:hover {
+    transform: var(--depth-#{$depth}) var(--rotate-x) var(--rotate-y);
+  }
+}
+
+// 进入动画 - 淡入上浮
+@mixin fade-in-up($delay: 0s, $duration: 0.5s) {
+  animation: fadeInUp $duration var(--transition-elastic) forwards;
+  animation-delay: $delay;
+  opacity: 0;
+}
+
+// 进入动画 - 缩放
+@mixin zoom-in($delay: 0s, $duration: 0.4s) {
+  animation: zoomIn $duration var(--transition-bounce) forwards;
+  animation-delay: $delay;
+  opacity: 0;
+}
+
+// 进入动画 - 滑入
+@mixin slide-in($direction: left, $delay: 0s, $duration: 0.5s) {
+  animation: slideIn#{$direction} $duration var(--transition-elastic) forwards;
+  animation-delay: $delay;
+  opacity: 0;
+}
+
+// 退出动画
+@mixin fade-out-down($duration: 0.3s) {
+  animation: fadeOutDown $duration var(--transition-base) forwards;
+}
+
+// 脉冲动画
+@mixin pulse($duration: 2s) {
+  animation: pulse $duration infinite ease-in-out;
+}
+
+// 发光动画
+@mixin glow($color: var(--color-primary), $duration: 1.5s) {
+  animation: glow $duration infinite ease-in-out;
+  box-shadow: 0 0 20px $color;
+}
+
+// 悬浮动画
+@mixin float($duration: 3s, $distance: 10px) {
+  animation: float $duration infinite ease-in-out;
+}
+
+// 旋转动画
+@mixin rotate($duration: 20s) {
+  animation: rotate $duration linear infinite;
+}
+
+// 响应式断点
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "sm" {
+    @media (min-width: 640px) { @content; }
+  } @else if $breakpoint == "md" {
+    @media (min-width: 768px) { @content; }
+  } @else if $breakpoint == "lg" {
+    @media (min-width: 1024px) { @content; }
+  } @else if $breakpoint == "xl" {
+    @media (min-width: 1280px) { @content; }
+  } @else if $breakpoint == "2xl" {
+    @media (min-width: 1536px) { @content; }
+  }
+}
+
+// 网格布局
+@mixin grid-auto($min-width: 300px, $gap: var(--spacing-lg)) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+  gap: $gap;
+}
+
+// 弹性布局居中
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// 文字截断
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 多行文字截断
+@mixin line-clamp($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// 滚动条样式
+@mixin scrollbar($width: 8px, $color: var(--color-primary)) {
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $width;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-full);
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: $color;
+    border-radius: var(--radius-full);
+    
+    &:hover {
+      background: var(--color-primary-dark);
+    }
+  }
+}
+
+// 关键帧动画
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px var(--color-primary);
+  }
+  50% {
+    box-shadow: 0 0 40px var(--color-primary), 0 0 60px var(--color-primary);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-#{$distance});
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+// 骨架屏动画
+@mixin skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-secondary) 0%,
+    var(--bg-tertiary) 50%,
+    var(--bg-secondary) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
