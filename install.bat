@@ -44,15 +44,27 @@ echo %GREEN% Node.js 版本：
 node -v
 echo.
 
-REM 检测 npm
-where npm >nul 2>nul
-if %errorlevel% neq 0 (
-    echo %RED% 未检测到 npm
-    pause
-    exit /b 1
+REM 检测 pnpm 和 npm
+where pnpm >nul 2>nul
+if %errorlevel% equ 0 (
+    set "PM=pnpm"
+    echo [INFO] 使用 pnpm 作为包管理器
+    goto pm_found
 )
 
-echo %BLUE% 使用 npm 作为包管理器
+where npm >nul 2>nul
+if %errorlevel% equ 0 (
+    set "PM=npm"
+    echo [WARNING] 未检测到 pnpm，使用 npm 作为包管理器
+    echo [INFO] 安装 pnpm: npm install -g pnpm
+    goto pm_found
+)
+
+echo [ERROR] 未检测到 npm 或 pnpm
+pause
+exit /b 1
+
+:pm_found
 echo.
 
 REM 解析参数
@@ -101,7 +113,11 @@ if exist "node_modules" (
     )
 )
 
-call npm install --legacy-peer-deps
+if "%PM%"=="pnpm" (
+    call pnpm install --no-frozen-lockfile
+) else (
+    call npm install --legacy-peer-deps
+)
 if %errorlevel% neq 0 (
     echo %RED% 依赖安装失败
     pause
@@ -114,41 +130,11 @@ goto end
 :build
 echo %BLUE% 开始构建项目...
 
-echo %BLUE% 构建核心模块...
-cd packages\core
-call npm install
-call npm run build
-cd ..\..
-
-echo %BLUE% 构建工具库...
-cd packages\utils
-call npm install
-call npm run build
-cd ..\..
-
-echo %BLUE% 构建网络模块...
-cd packages\network
-call npm install
-call npm run build
-cd ..\..
-
-echo %BLUE% 构建模块 SDK...
-cd packages\module-sdk
-call npm install
-call npm run build
-cd ..\..
-
-echo %BLUE% 构建主题 SDK...
-cd packages\theme-sdk
-call npm install
-call npm run build
-cd ..\..
-
-echo %BLUE% 构建 OneBot 适配器...
-cd packages\adapter-onebot
-call npm install
-call npm run build
-cd ..\..
+if "%PM%"=="pnpm" (
+    call pnpm run build
+) else (
+    call npm run build
+)
 
 echo %GREEN% 项目构建完成
 goto end
@@ -159,7 +145,11 @@ echo %BLUE% 准备运行示例...
 cd examples\basic
 
 echo %BLUE% 安装示例依赖...
-call npm install --legacy-peer-deps
+if "%PM%"=="pnpm" (
+    call pnpm install --no-frozen-lockfile
+) else (
+    call npm install --legacy-peer-deps
+)
 
 echo %GREEN% 启动 NebulaQQ 示例机器人...
 echo %YELLOW% 请确保已配置好 OneBot 服务 ^(如 NapCatQQ^)

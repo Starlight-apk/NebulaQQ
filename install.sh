@@ -73,11 +73,15 @@ check_node() {
 
 # 检测包管理器
 check_package_manager() {
-    if command -v npm &> /dev/null; then
+    if command -v pnpm &> /dev/null; then
+        PM="pnpm"
+        print_success "使用 pnpm 作为包管理器"
+    elif command -v npm &> /dev/null; then
         PM="npm"
-        print_success "使用 npm 作为包管理器"
+        print_warning "未检测到 pnpm，使用 npm 作为包管理器（建议使用 pnpm）"
+        print_info "安装 pnpm: npm install -g pnpm"
     else
-        print_error "未检测到 npm"
+        print_error "未检测到 npm 或 pnpm"
         exit 1
     fi
 }
@@ -85,53 +89,32 @@ check_package_manager() {
 # 安装依赖
 install_dependencies() {
     print_info "开始安装依赖..."
-    
+
     # 清理旧的 node_modules (可选)
     if [ -d "node_modules" ]; then
         print_info "检测到旧的 node_modules，建议先清理"
         read -p "是否清理 node_modules? (y/N): " clean_choice
         if [ "$clean_choice" = "y" ] || [ "$clean_choice" = "Y" ]; then
-            rm -rf node_modules package-lock.json
+            rm -rf node_modules package-lock.json pnpm-lock.yaml
             print_info "已清理旧的依赖"
         fi
     fi
-    
+
     # 安装依赖
-    print_info "运行 npm install..."
-    $PM install --legacy-peer-deps
-    
+    print_info "运行 $PM install..."
+    if [ "$PM" = "pnpm" ]; then
+        $PM install --no-frozen-lockfile
+    else
+        $PM install --legacy-peer-deps
+    fi
+
     print_success "依赖安装完成"
 }
 
 # 构建项目
 build_project() {
     print_info "开始构建项目..."
-    
-    # 检查 TypeScript
-    if ! $PM list typescript &> /dev/null; then
-        print_warning "未检测到 TypeScript，先安装..."
-        $PM install -g typescript
-    fi
-    
-    # 构建各个包
-    print_info "构建核心模块..."
-    cd packages/core && $PM install && $PM run build && cd ../..
-    
-    print_info "构建工具库..."
-    cd packages/utils && $PM install && $PM run build && cd ../..
-    
-    print_info "构建网络模块..."
-    cd packages/network && $PM install && $PM run build && cd ../..
-    
-    print_info "构建模块 SDK..."
-    cd packages/module-sdk && $PM install && $PM run build && cd ../..
-    
-    print_info "构建主题 SDK..."
-    cd packages/theme-sdk && $PM install && $PM run build && cd ../..
-    
-    print_info "构建 OneBot 适配器..."
-    cd packages/adapter-onebot && $PM install && $PM run build && cd ../..
-    
+    $PM run build
     print_success "项目构建完成"
 }
 
