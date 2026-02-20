@@ -1,0 +1,38 @@
+{
+  "name": "create-nebulaqq",
+  "version": "1.0.0",
+  "description": "NebulaQQ CLI - 快速创建 QQ 机器人项目",
+  "type": "module",
+  "bin": {
+    "create-nebulaqq": "./bin/cli.js",
+    "nebulaqq": "./bin/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "keywords": [
+    "qq",
+    "bot",
+    "cli",
+    "nebulaqq",
+    "scaffold"
+  ],
+  "author": "NebulaQQ Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "commander": "^11.1.0",
+    "prompts": "^2.4.2",
+    "kolorist": "^1.8.0",
+    "fs-extra": "^11.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/prompts": "^2.4.9",
+    "@types/fs-extra": "^11.0.4",
+    "typescript": "^5.3.0"
+  }
+}

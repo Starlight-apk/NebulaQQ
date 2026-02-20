@@ -1,0 +1,51 @@
+{
+  "name": "@nebulaqq/adapter-onebot",
+  "version": "1.0.0",
+  "description": "NebulaQQ OneBot v11 协议适配器",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "os": [
+    "linux",
+    "darwin",
+    "win32"
+  ],
+  "cpu": [
+    "x64",
+    "arm64",
+    "arm"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "nebulaqq",
+    "onebot",
+    "adapter",
+    "termux",
+    "arm64"
+  ],
+  "author": "NebulaQQ Team",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^8.14.2"
+  },
+  "devDependencies": {
+    "@nebulaqq/core": "file:../core",
+    "@types/ws": "^8.5.10",
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0"
+  }
+}

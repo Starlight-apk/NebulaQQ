@@ -1,0 +1,62 @@
+{
+  "name": "nebulaqq",
+  "version": "1.0.0",
+  "description": "NebulaQQ - 新一代现代化 QQ 机器人框架，支持插件、模块和主题系统",
+  "type": "module",
+  "scripts": {
+    "build": "npm run build:core && npm run build:utils && npm run build:network && npm run build:module && npm run build:theme && npm run build:adapter",
+    "build:core": "cd packages/core && npm run build",
+    "build:utils": "cd packages/utils && npm run build",
+    "build:network": "cd packages/network && npm run build",
+    "build:module": "cd packages/module-sdk && npm run build",
+    "build:theme": "cd packages/theme-sdk && npm run build",
+    "build:adapter": "cd packages/adapter-onebot && npm run build",
+    "dev": "node --loader ts-node/esm examples/basic/index.ts",
+    "test": "node --test",
+    "lint": "eslint packages/**/src/**/*.ts",
+    "typecheck": "tsc --noEmit",
+    "prepare": "npm run build",
+    "clean": "rm -rf packages/*/dist"
+  },
+  "keywords": [
+    "qq",
+    "bot",
+    "robot",
+    "onebot",
+    "nebulaqq",
+    "framework",
+    "termux",
+    "arm64"
+  ],
+  "author": "NebulaQQ Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "os": [
+    "linux",
+    "darwin",
+    "win32"
+  ],
+  "cpu": [
+    "x64",
+    "arm64",
+    "arm"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NebulaQQ/NebulaQQ"
+  },
+  "homepage": "https://nebulaqq.dev",
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0",
+    "ts-node": "^10.9.2",
+    "eslint": "^8.55.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
