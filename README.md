@@ -421,6 +421,20 @@ NebulaQQ 基于以下优秀项目构建：
 
 ---
 
+## 👥 贡献者
+
+<div align="center">
+
+| 贡献者 | 角色 | 贡献内容 |
+|:---:|:---:|---|
+| **[qwencoder](https://github.com/qwencoder)** | 🏆 主贡献者 | 全部代码编写、核心架构设计、功能实现 |
+| **[Starlight-apk](https://github.com/Starlight-apk)** | 👑 仓库所有者 | 项目发起、仓库管理、方向规划 |
+| **[xuanbao-yujian](https://github.com/xuanbao-yujian)** | 🤝 合作伙伴 | 协作开发、技术支持 |
+
+</div>
+
+---
+
 <div align="center">
 
 ### 🌌 NebulaQQ Framework
