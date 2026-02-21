@@ -39,11 +39,10 @@
   ],
   "author": "NebulaQQ Team",
   "license": "MIT",
-  "peerDependencies": {
+  "dependencies": {
     "@nebulaqq/core": "workspace:*"
   },
   "devDependencies": {
-    "@nebulaqq/core": "file:../core",
     "@types/node": "^20.10.0",
     "typescript": "^5.3.0"
   }

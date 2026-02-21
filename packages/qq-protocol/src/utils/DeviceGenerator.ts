@@ -3,7 +3,7 @@
  * 生成模拟的设备信息以通过腾讯验证
  */
 
-import { Random, MD5 } from './Crypto';
+import { Random, MD5 } from '../encrypt/Crypto';
 import type { DeviceInfo, QQClientVersion } from '../core/types';
 
 /**

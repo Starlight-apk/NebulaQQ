@@ -1,13 +1,13 @@
 /**
  * NebulaQQ - OneBot 协议适配器
- * 
+ *
  * 实现 OneBot v11 标准的 WebSocket 和 HTTP 通信
  */
 
 import WebSocket from 'ws';
 import { EventEmitter } from 'events';
-import type { Event, MessageEvent, NoticeEvent, RequestEvent, MetaEvent, ApiResponse, ApiParams } from '../types';
-import type { Logger } from '../logger/Logger';
+import type { Event, MessageEvent, NoticeEvent, RequestEvent, MetaEvent, ApiResponse, ApiParams } from '@nebulaqq/core';
+import type { Logger } from '@nebulaqq/core';
 
 /** 适配器配置 */
 export interface OneBotAdapterConfig {

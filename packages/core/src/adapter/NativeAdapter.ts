@@ -1,11 +1,14 @@
 /**
  * NebulaQQ - 原生 QQ 协议适配器
  * 直接使用 QQ 协议层，无需 OneBot 中转
+ *
+ * 注意：此适配器需要 @nebulaqq/qq-protocol 包
  */
 
 import { EventEmitter } from 'events';
-import { QQProtocol, DeviceGenerator } from '../qq-protocol';
 import { Logger, type Logger as ILogger } from '../logger/Logger';
+
+// 从外部包导入（构建时需要先构建 qq-protocol 包）
 import type {
   ProtocolConfig,
   LoginConfig,
@@ -16,7 +19,8 @@ import type {
   FriendInfo,
   GroupInfo,
   GroupMemberInfo
-} from '../qq-protocol';
+} from '../../qq-protocol';
+import { QQProtocol, DeviceGenerator } from '../../qq-protocol';
 
 /** 原生协议适配器配置 */
 export interface NativeAdapterConfig {
@@ -60,7 +64,7 @@ export class NativeAdapter extends EventEmitter {
   constructor(config: NativeAdapterConfig, logger: Logger) {
     super();
     this.config = config;
-    this.logger = logger.get('NativeAdapter');
+    this.logger = logger.child('NativeAdapter');
     this.protocol = new QQProtocol();
 
     this.setupProtocolHandlers();

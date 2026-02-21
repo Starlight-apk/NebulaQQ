@@ -155,6 +155,11 @@ export interface Logger {
   setLevel(level: LogLevel): void;
 }
 
+/** 日志器静态接口（用于 LoggerManager.get） */
+export interface LoggerStatic {
+  get(module: string): Logger;
+}
+
 /** 配置项定义 */
 export interface ConfigItem<T = unknown> {
   key: string;

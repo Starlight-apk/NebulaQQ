@@ -5,7 +5,7 @@
  */
 
 import { EventEmitter } from 'events';
-import type { MessageEvent, PluginContext, MessageSegment } from '../types';
+import type { MessageEvent, PluginContext, MessageSegment as MessageSegmentType } from '../types';
 import type { Logger } from '../logger/Logger';
 
 /** 插件元数据 */
@@ -57,21 +57,17 @@ export interface MessageContext {
   /** 群 ID（如果是群消息） */
   groupId?: number;
   /** 回复消息 */
-  reply: (message: string | MessageSegment[]) => Promise<boolean>;
+  reply: (message: string | MessageSegmentType[]) => Promise<boolean>;
   /** 发送消息 */
-  send: (message: string | MessageSegment[]) => Promise<boolean>;
+  send: (message: string | MessageSegmentType[]) => Promise<boolean>;
   /** 撤回消息 */
   recall: () => Promise<boolean>;
   /** 调用底层 API */
   callApi: <T = unknown>(action: string, params?: Record<string, unknown>) => Promise<T>;
 }
 
-/** 消息段 */
-export interface MessageSegment {
-  type: string;
-  data?: Record<string, unknown>;
-  [key: string]: unknown;
-}
+/** 消息段类型别名（为了向后兼容） */
+export type MessageSegment = MessageSegmentType;
 
 /** 通知上下文 */
 export interface NoticeContext {

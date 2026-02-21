@@ -1,15 +1,15 @@
 /**
  * NebulaQQ - 机器人主类
- * 
+ *
  * 整合事件系统、插件管理、协议适配器的核心类
  */
 
 import { EventEmitter } from 'events';
-import { EventSystem, EventFilters } from '../events/EventSystem';
-import { PluginManager, definePlugin, type Plugin, type MessageContext, type MessageSegment } from '../plugin/PluginManager';
-import { OneBotAdapter, type OneBotAdapterConfig } from '../adapter/OneBotAdapter';
-import { Logger, LoggerManager, type Logger as ILogger, type LogLevel } from '../logger/Logger';
-import type { Event, MessageEvent, NoticeEvent, RequestEvent, ApiParams } from '../types';
+import { EventSystem } from './events/EventSystem';
+import { PluginManager, type Plugin, type MessageContext, type MessageSegment } from './plugin/PluginManager';
+import { OneBotAdapter, type OneBotAdapterConfig } from './adapter/OneBotAdapter';
+import { LoggerManager, type Logger as ILogger, type LogLevel, get as getLogger } from './logger/Logger';
+import type { Event, MessageEvent, NoticeEvent, RequestEvent, MetaEvent, ApiParams } from './types';
 
 /** 机器人配置 */
 export interface NebulaBotConfig {
@@ -442,5 +442,3 @@ export class NebulaBot extends EventEmitter {
     return this.status === 'running';
   }
 }
-
-export { definePlugin };

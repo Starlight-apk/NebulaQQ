@@ -41,7 +41,11 @@
   "author": "NebulaQQ Team",
   "license": "MIT",
   "dependencies": {
+    "@nebulaqq/qq-protocol": "workspace:*",
     "ws": "^8.14.2"
+  },
+  "optionalDependencies": {
+    "better-sqlite3": "^9.0.0"
   },
   "devDependencies": {
     "@types/ws": "^8.5.10",

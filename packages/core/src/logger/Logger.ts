@@ -289,3 +289,15 @@ export class LoggerManager {
     return Array.from(this.loggers.values());
   }
 }
+
+/**
+ * 全局日志器管理器实例
+ */
+export const loggerManager = new LoggerManager();
+
+/**
+ * 获取日志器的快捷方法
+ */
+export function get(module: string): Logger {
+  return loggerManager.get(module);
+}

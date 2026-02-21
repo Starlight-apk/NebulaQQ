@@ -1,252 +1,170 @@
-# 🚀 NebulaQQ 一键安装说明
+# NebulaQQ 安装指南
 
-## 快速开始 (3 步完成)
+## 快速安装
 
-### Linux / macOS / Termux 用户
+### Linux/macOS
 
 ```bash
-# 步骤 1: 赋予脚本执行权限
+# 方式 1: 使用安装脚本（推荐）
 chmod +x install.sh
+./install.sh
 
-# 步骤 2: 运行安装脚本
-./install.sh all
+# 方式 2: 手动安装
+# 1. 清理缓存
+rm -rf node_modules packages/*/node_modules pnpm-lock.yaml packages/*/dist
+pnpm store prune
 
-# 步骤 3: 配置 OneBot 服务后，机器人即可运行!
+# 2. 配置国内镜像
+echo "registry=https://registry.npmmirror.com/" > .npmrc
+
+# 3. 安装依赖
+pnpm install --prefer-offline
 ```
 
-### Windows 用户
+### Windows
 
 ```batch
-# 双击运行即可
+:: 方式 1: 使用安装脚本（推荐）
 install.bat
+
+:: 方式 2: 手动安装
+:: 1. 删除 node_modules 和 pnpm-lock.yaml
+:: 2. 配置国内镜像（创建 .npmrc 文件）
+:: 3. 运行 pnpm install
 ```
 
----
-
-## 安装脚本选项
+### Termux (Android)
 
 ```bash
-# 完整流程：安装 + 构建 + 运行
-./install.sh all
+# 1. 安装 Node.js 和 pnpm
+pkg install nodejs
+npm install -g pnpm
 
-# 仅安装依赖
-./install.sh install
+# 2. 配置国内镜像
+pnpm config set registry https://registry.npmmirror.com/
 
-# 仅构建项目
-./install.sh build
-
-# 仅运行示例
-./install.sh run
-
-# 清理构建产物
-./install.sh clean
-
-# 查看帮助
-./install.sh help
+# 3. 清理并安装
+rm -rf node_modules packages/*/node_modules pnpm-lock.yaml
+./install.sh
 ```
 
----
+## 常见问题解决
 
-## 环境要求
+### pnpm install 卡住/超时
 
-### 必需
+**症状**: 卡在 "Progress: resolved X/X" 状态超过 30 分钟
 
-- **Node.js** >= 18.0.0
-- **npm** (随 Node.js 安装)
+**解决方案**:
 
-### 可选
+1. **检查文件系统类型**
+   ```bash
+   # Linux
+   df -T /storage/self/primary/Kaifa/NebulaQQ
+   
+   # 如果是 exFAT/vfat，建议复制到 ext4 分区
+   # exFAT 不支持某些文件锁机制，会导致 pnpm 卡死
+   ```
 
-- **Git** (用于克隆仓库)
-- **TypeScript** (全局安装，用于开发)
+2. **更换镜像源**
+   ```bash
+   pnpm config set registry https://registry.npmmirror.com/
+   ```
 
----
+3. **清理缓存**
+   ```bash
+   pnpm store prune
+   rm -rf ~/.local/share/pnpm/store  # Linux
+   rm -rf ~/Library/pnpm/store      # macOS
+   ```
 
-## 平台特定说明
+4. **删除 lock 文件重试**
+   ```bash
+   rm -rf node_modules packages/*/node_modules pnpm-lock.yaml
+   pnpm install --prefer-offline
+   ```
 
-### Termux (ARM64)
+5. **检查网络代理**
+   ```bash
+   # 如果有代理，取消代理
+   unset http_proxy
+   unset https_proxy
+   
+   # 或者设置正确的代理
+   export http_proxy=http://your-proxy:port
+   export https_proxy=http://your-proxy:port
+   ```
+
+6. **使用 npm 替代**
+   ```bash
+   # 如果 pnpm 持续失败，可以使用 npm
+   npm install
+   ```
+
+### 构建失败
+
+**症状**: `@nebulaqq/core` 构建失败
+
+**解决方案**:
+
+1. **确保先构建 qq-protocol 包**
+   ```bash
+   cd packages/qq-protocol && npm run build
+   cd ../core && npm run build
+   ```
+
+2. **检查 TypeScript 版本**
+   ```bash
+   node -v  # 需要 >= 18.0.0
+   npm list typescript  # 需要 >= 5.3.0
+   ```
+
+### better-sqlite3 安装失败
+
+**症状**: `better-sqlite3` 编译失败
+
+**解决方案**:
 
 ```bash
-# 先安装 Node.js
-pkg update && pkg upgrade -y
-pkg install nodejs -y
+# 安装构建工具
+# Ubuntu/Debian
+sudo apt install python3 make g++
 
-# 然后运行安装脚本
-chmod +x install.sh
-./install.sh all
+# Termux
+pkg install python make clang
+
+# 然后重新安装
+pnpm install
 ```
-
-详细指南请查看 [TERMUX.md](./TERMUX.md)
-
-### Linux (x64/ARM64)
-
-无需特殊配置，直接运行：
-
-```bash
-./install.sh all
-```
-
-### macOS (Intel/Apple Silicon)
-
-无需特殊配置，直接运行：
-
-```bash
-./install.sh all
-```
-
-### Windows (x64/ARM64)
-
-使用 `install.bat`：
-
-```batch
-install.bat
-```
-
-或在 Git Bash 中使用 `install.sh`：
-
-```bash
-chmod +x install.sh
-./install.sh all
-```
-
----
-
-## 手动安装 (备选方案)
-
-如果自动安装脚本失败，可以手动安装：
-
-### 步骤 1: 安装全局依赖
-
-```bash
-npm install -g typescript ts-node
-```
-
-### 步骤 2: 构建各个包
-
-```bash
-# 核心模块
-cd packages/core
-npm install
-npm run build
-cd ../..
-
-# 工具库
-cd packages/utils
-npm install
-npm run build
-cd ../..
-
-# 网络模块
-cd packages/network
-npm install
-npm run build
-cd ../..
-
-# 模块 SDK
-cd packages/module-sdk
-npm install
-npm run build
-cd ../..
-
-# 主题 SDK
-cd packages/theme-sdk
-npm install
-npm run build
-cd ../..
-
-# OneBot 适配器
-cd packages/adapter-onebot
-npm install
-npm run build
-cd ../..
-```
-
-### 步骤 3: 运行示例
-
-```bash
-cd examples/basic
-npm install --legacy-peer-deps
-npm run dev
-```
-
----
 
 ## 验证安装
 
-运行以下命令验证安装是否成功：
-
 ```bash
-# 检查 Node.js 版本
-node -v  # 应该 >= v18.0.0
+# 检查依赖是否安装完成
+ls -la node_modules/@nebulaqq/
 
-# 检查 npm 版本
-npm -v
-
-# 检查 TypeScript
-npx tsc -v
-
-# 检查 ts-node
-npx ts-node -v
+# 应该看到:
+# core  qq-protocol  utils  network  module-sdk  adapter-onebot
 ```
 
----
-
-## 常见问题
-
-### Q: 安装时遇到权限错误
-
-**A:** 使用 `sudo` 或在命令前加 `--unsafe-perm`：
+## 手动安装步骤（如果脚本失败）
 
 ```bash
-npm install --unsafe-perm
-```
+# 1. 创建 .npmrc 文件
+cat > .npmrc << EOF
+registry=https://registry.npmmirror.com/
+loglevel=error
+progress=false
+disable-progress-bar=true
+fetch-timeout=60000
+optional=false
+EOF
 
-### Q: 遇到 `node-gyp` 错误
+# 2. 清理旧文件
+rm -rf node_modules packages/*/node_modules pnpm-lock.yaml packages/*/dist
 
-**A:** 安装构建工具：
+# 3. 安装依赖
+pnpm install --prefer-offline
 
-**Linux:**
-```bash
-sudo apt-get install build-essential python3
-```
-
-**Termux:**
-```bash
-pkg install build-essential python -y
-```
-
-### Q: 构建失败
-
-**A:** 清理后重试：
-
-```bash
-npm run clean
-npm install --legacy-peer-deps
+# 4. 构建项目
 npm run build
 ```
-
-### Q: 运行时提示找不到模块
-
-**A:** 确保已构建所有包：
-
-```bash
-npm run build
-```
-
-### Q: 连接 OneBot 失败
-
-**A:** 检查：
-1. OneBot 服务是否运行
-2. 配置中的 IP 和端口是否正确
-3. 防火墙设置
-
----
-
-## 下一步
-
-安装成功后，请查看：
-
-1. [快速开始指南](./docs/getting-started.md)
-2. [插件开发指南](./docs/plugins.md)
-3. [API 参考](./docs/api.md)
-
-祝你使用愉快！🌌

@@ -108,7 +108,7 @@ export class EventSystem extends EventEmitter {
   /**
    * 触发事件
    */
-  async emit(eventType: string, event: Event): Promise<boolean> {
+  emit(eventType: string, event: Event): boolean {
     const startTime = Date.now();
     this.stats.totalEvents++;
     this.stats.lastEventTime = startTime;
@@ -127,28 +127,32 @@ export class EventSystem extends EventEmitter {
       }
     }
 
-    // 应用中间件
-    const middlewareIndex = 0;
-    await this.runMiddlewares(event, middlewareIndex, async () => {
-      // 调用处理器
-      const listeners = this.listeners(eventType) as EventHandler[];
-      for (const handler of listeners) {
-        try {
-          await handler(event);
-        } catch (error) {
-          console.error(`事件处理器错误 [${eventType}]:`, error);
+    // 同步调用处理器（与 EventEmitter 保持一致）
+    const listeners = this.listeners(eventType) as EventHandler[];
+    for (const handler of listeners) {
+      try {
+        const result = handler(event);
+        // 如果处理器返回 Promise，不等待但捕获错误
+        if (result instanceof Promise) {
+          result.catch(error => {
+            console.error(`事件处理器错误 [${eventType}]:`, error);
+          });
         }
+      } catch (error) {
+        console.error(`事件处理器错误 [${eventType}]:`, error);
       }
-    });
-
-    // 更新处理时间统计
-    const processingTime = Date.now() - startTime;
-    this.processingTimes.push(processingTime);
-    if (this.processingTimes.length > 100) {
-      this.processingTimes.shift();
     }
-    this.stats.avgProcessingTime =
-      this.processingTimes.reduce((a, b) => a + b, 0) / this.processingTimes.length;
+
+    // 更新处理时间统计（异步更新）
+    setImmediate(() => {
+      const processingTime = Date.now() - startTime;
+      this.processingTimes.push(processingTime);
+      if (this.processingTimes.length > 100) {
+        this.processingTimes.shift();
+      }
+      this.stats.avgProcessingTime =
+        this.processingTimes.reduce((a, b) => a + b, 0) / this.processingTimes.length;
+    });
 
     return super.emit(eventType, event);
   }

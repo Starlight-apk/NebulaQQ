@@ -47,12 +47,12 @@ export class SQLiteDatabaseManager extends EventEmitter implements IDatabaseMana
   private async loadSQLiteModule(): Promise<void> {
     if (!Database) {
       try {
-        // 尝试动态导入
+        // 尝试动态导入 better-sqlite3
+        // @ts-ignore - better-sqlite3 是可选依赖
         const module = await import('better-sqlite3');
         Database = module.default;
       } catch (error) {
-        this.log('warning', 'better-sqlite3 未安装，尝试使用 sql.js');
-        // 可以降级到 sql.js
+        this.log('warning', 'better-sqlite3 未安装，请手动安装：npm install better-sqlite3');
         throw new Error('请安装数据库依赖：npm install better-sqlite3');
       }
     }

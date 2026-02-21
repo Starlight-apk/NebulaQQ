@@ -142,25 +142,25 @@ export class OneBotAdapter extends EventEmitter {
         this.logger.info('OneBot 服务已上线');
         this.fetchLoginInfo();
       }
-      this.emit('meta_event', payload as MetaEvent);
+      this.emit('meta_event', payload as unknown as MetaEvent);
       return;
     }
 
     // 处理通知事件
     if (post_type === 'notice') {
-      this.emit('notice', payload as NoticeEvent);
+      this.emit('notice', payload as unknown as NoticeEvent);
       return;
     }
 
     // 处理请求事件
     if (post_type === 'request') {
-      this.emit('request', payload as RequestEvent);
+      this.emit('request', payload as unknown as RequestEvent);
       return;
     }
 
     // 处理消息事件
     if (post_type === 'message') {
-      this.emit('message', payload as MessageEvent);
+      this.emit('message', payload as unknown as MessageEvent);
       return;
     }
 

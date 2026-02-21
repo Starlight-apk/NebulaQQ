@@ -97,7 +97,7 @@ export class TEA {
  */
 export class ECDH {
   private static readonly CURVE = 'prime256v1';
-  
+
   private privateKey: crypto.ECDH;
   private publicKey: Buffer;
 
@@ -123,8 +123,10 @@ export class ECDH {
 
   /**
    * 设置公钥（用于接收方）
+   * @param publicKey - 公钥 Buffer
    */
   setPublicKey(publicKey: Buffer): void {
+    // @ts-ignore - Node.js crypto.ECDH 确实有 setPublicKey 方法，但类型定义可能不完整
     this.privateKey.setPublicKey(publicKey);
   }
 
@@ -133,6 +135,7 @@ export class ECDH {
    */
   static fromPublicKey(publicKey: Buffer): ECDH {
     const ecdh = crypto.createECDH(ECDH.CURVE);
+    // @ts-ignore - Node.js crypto.ECDH 确实有 setPublicKey 方法
     ecdh.setPublicKey(publicKey);
     const instance = Object.create(ECDH.prototype);
     instance.privateKey = ecdh;

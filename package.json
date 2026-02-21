@@ -4,22 +4,22 @@
   "description": "NebulaQQ - 新一代现代化 QQ 机器人框架，支持插件、模块和主题系统",
   "type": "module",
   "scripts": {
-    "build": "npm run build:core && npm run build:utils && npm run build:network && npm run build:module && npm run build:theme && npm run build:adapter && npm run build:webui && npm run build:protocol",
-    "build:core": "cd packages/core && npm run build",
-    "build:utils": "cd packages/utils && npm run build",
-    "build:network": "cd packages/network && npm run build",
-    "build:module": "cd packages/module-sdk && npm run build",
-    "build:theme": "cd packages/theme-sdk && npm run build",
-    "build:adapter": "cd packages/adapter-onebot && npm run build",
-    "build:webui": "cd packages/webui && npm run build",
-    "build:protocol": "cd packages/qq-protocol && npm run build",
-    "dev:webui": "cd packages/webui && npm run dev",
-    "dev:theme-glass": "cd packages/webui-theme-glass && npm run dev",
-    "start:webui": "cd packages/webui-server && npm run start",
+    "build": "pnpm run build:protocol && pnpm run build:core && pnpm run build:utils && pnpm run build:network && pnpm run build:module && pnpm run build:theme && pnpm run build:adapter && pnpm run build:webui",
+    "build:core": "cd packages/core && pnpm run build",
+    "build:utils": "cd packages/utils && pnpm run build",
+    "build:network": "cd packages/network && pnpm run build",
+    "build:module": "cd packages/module-sdk && pnpm run build",
+    "build:theme": "cd packages/theme-sdk && pnpm run build",
+    "build:adapter": "cd packages/adapter-onebot && pnpm run build",
+    "build:webui": "cd packages/webui && pnpm run build",
+    "build:protocol": "cd packages/qq-protocol && pnpm run build",
+    "dev:webui": "cd packages/webui && pnpm run dev",
+    "dev:theme-glass": "cd packages/webui-theme-glass && pnpm run dev",
+    "start:webui": "cd packages/webui-server && pnpm run start",
     "test": "node --test",
     "lint": "eslint packages/**/src/**/*.ts",
     "typecheck": "tsc --noEmit",
-    "prepare": "npm run build",
+    "prepare": "pnpm run build",
     "clean": "rm -rf packages/*/dist packages/*/node_modules"
   },
   "keywords": [
@@ -62,7 +62,5 @@
     "@typescript-eslint/eslint-plugin": "^6.13.0",
     "@typescript-eslint/parser": "^6.13.0"
   },
-  "workspaces": [
-    "packages/*"
-  ]
+  "packageManager": "pnpm@8.0.0"
 }
